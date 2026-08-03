@@ -1,1 +1,65 @@
 @import "tailwindcss";
+
+@theme {
+  /* ------------------------------------------------------------------
+     Brand — the logo blue (#2776a2 sits at 600). Clinical and steady.
+     Use 600 for primary actions, 800/900 for large dark surfaces.
+     ------------------------------------------------------------------ */
+  --color-brand-50: #f2f7fa;
+  --color-brand-100: #e3eef4;
+  --color-brand-200: #c2dbe8;
+  --color-brand-300: #93c0d6;
+  --color-brand-400: #5da0bf;
+  --color-brand-500: #3785ab;
+  --color-brand-600: #2776a2;
+  --color-brand-700: #205f83;
+  --color-brand-800: #1d506d;
+  --color-brand-900: #1c435b;
+  --color-brand-950: #122b3c;
+
+  /* ------------------------------------------------------------------
+     Accent — the logo orange (#f38b2b sits at 400). Used sparingly,
+     for emphasis only. 400 fills carry ink text; 700 is the
+     accessible tone for orange text on white.
+     ------------------------------------------------------------------ */
+  --color-accent-50: #fef6ee;
+  --color-accent-100: #fdead7;
+  --color-accent-200: #fad1ae;
+  --color-accent-300: #f7b27a;
+  --color-accent-400: #f38b2b;
+  --color-accent-500: #f1791a;
+  --color-accent-600: #e25f10;
+  --color-accent-700: #bb4710;
+  --color-accent-800: #953915;
+  --color-accent-900: #783114;
+
+  /* ------------------------------------------------------------------
+     Neutrals — greys retinted a touch blue so they sit with the brand
+     instead of fighting it. Overrides Tailwind's default grey scale.
+     ------------------------------------------------------------------ */
+  --color-gray-50: #f7f9fa;
+  --color-gray-100: #eef2f5;
+  --color-gray-200: #dfe6ea;
+  --color-gray-300: #c6d1d8;
+  --color-gray-400: #96a5af;
+  --color-gray-500: #6d7d88;
+  --color-gray-600: #54626c;
+  --color-gray-700: #414d55;
+  --color-gray-800: #2c353b;
+  --color-gray-900: #1a2126;
+  --color-gray-950: #0f1418;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-white);
+    color: var(--color-gray-700);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-brand-100);
+    color: var(--color-brand-900);
+  }
+}

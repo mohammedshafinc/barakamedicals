@@ -1,200 +1,232 @@
-import { Heart, Shield, Zap, Users, Award, Clock } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import {
+  Activity,
+  ArrowRight,
+  Boxes,
+  Headset,
+  ShieldCheck,
+  Stethoscope,
+  Syringe,
+  Truck,
+} from 'lucide-react';
+
+const categories = [
+  {
+    title: 'Diagnostic equipment',
+    description: 'Instruments that support accurate, confident assessment.',
+    icon: Stethoscope,
+  },
+  {
+    title: 'Patient monitoring',
+    description: 'Dependable monitoring solutions for continuous care.',
+    icon: Activity,
+  },
+  {
+    title: 'Surgical instruments',
+    description: 'Precision tools built to consistent quality standards.',
+    icon: Syringe,
+  },
+  {
+    title: 'Medical consumables',
+    description: 'Everyday essentials, available and reliably stocked.',
+    icon: Boxes,
+  },
+];
+
+const commitments = [
+  {
+    title: 'Recognized standards',
+    description:
+      'We work with trusted manufacturers and suppliers, and select products that meet recognized quality and safety standards.',
+    icon: ShieldCheck,
+  },
+  {
+    title: 'Technical expertise',
+    description:
+      'Our team advises on the right solution for your setting and stays involved through every stage of the purchase.',
+    icon: Headset,
+  },
+  {
+    title: 'Timely service',
+    description:
+      'Responsive supply and clear communication, so clinical teams are never left waiting on essentials.',
+    icon: Truck,
+  },
+];
 
 const Home = () => {
-  const services = [
-    {
-      icon: <Heart className="w-12 h-12 text-red-600" />,
-      title: 'Quality Products',
-      description: 'Premium medical devices from trusted manufacturers worldwide.',
-    },
-    {
-      icon: <Shield className="w-12 h-12 text-red-600" />,
-      title: 'Certified & Safe',
-      description: 'All products meet international safety and quality standards.',
-    },
-    {
-      icon: <Zap className="w-12 h-12 text-red-600" />,
-      title: 'Fast Delivery',
-      description: 'Quick and reliable delivery across Qatar.',
-    },
-    {
-      icon: <Users className="w-12 h-12 text-red-600" />,
-      title: 'Expert Support',
-      description: '24/7 customer support from our medical device specialists.',
-    },
-    {
-      icon: <Award className="w-12 h-12 text-red-600" />,
-      title: 'Trusted Brand',
-      description: 'Years of experience serving healthcare professionals.',
-    },
-    {
-      icon: <Clock className="w-12 h-12 text-red-600" />,
-      title: 'Always Available',
-      description: 'Extensive inventory ready for immediate deployment.',
-    },
-  ];
-
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-white pt-20 pb-32 overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-red-50 to-transparent opacity-60"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-red-600 rounded-full blur-3xl opacity-5"></div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[600px]">
-            {/* Left Content */}
-            <div className="space-y-8">
-              <div className="inline-block">
-                <span className="bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm font-medium">
-                  🩺 Trusted Medical Solutions
-                </span>
-              </div>
-              
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
-                Premium
-                <span className="block text-red-600">Medical Devices</span>
-              </h1>
-              
-              <p className="text-xl text-gray-600 leading-relaxed max-w-xl">
-                Your trusted partner for quality medical equipment and devices in Doha, Qatar. 
-                We deliver excellence in healthcare solutions.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <a
-                  href="/contact"
-                  className="group bg-red-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-red-700 transition-all shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2"
-                >
-                  Get in Touch
-                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
-                <a
-                  href="/about"
-                  className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold border-2 border-gray-200 hover:border-red-600 hover:text-red-600 transition-all flex items-center justify-center gap-2"
-                >
-                  Learn More
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                  </svg>
-                </a>
-              </div>
+    <div className="pt-24">
+      {/* Hero image */}
+      <section className="relative isolate flex min-h-[calc(100svh-5rem)] items-center border-b border-gray-200 bg-brand-50">
+        <img
+          src="/hero.png"
+          alt="A clinician in a white coat reviewing patient information on a tablet in a hospital corridor."
+          className="absolute inset-0 h-full w-full object-cover object-center sm:object-right"
+          width="1699"
+          height="892"
+          fetchPriority="high"
+          decoding="async"
+        />
+        {/* Scrim: the artwork is light on the left, so the copy is dark and
+            the gradient only reinforces the existing contrast. */}
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-white/20 sm:via-white/75 sm:to-transparent"
+          aria-hidden="true"
+        />
 
-              {/* Stats */}
-              <div className="grid grid-cols-3 gap-6 pt-8 border-t border-gray-200">
-                <div>
-                  <p className="text-3xl font-bold text-red-600">500+</p>
-                  <p className="text-sm text-gray-600 mt-1">Products</p>
-                </div>
-                <div>
-                  <p className="text-3xl font-bold text-red-600">100+</p>
-                  <p className="text-sm text-gray-600 mt-1">Clients</p>
-                </div>
-                <div>
-                  <p className="text-3xl font-bold text-red-600">24/7</p>
-                  <p className="text-sm text-gray-600 mt-1">Support</p>
-                </div>
+        <div className="relative mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <div className="max-w-md sm:max-w-lg">
+            <p className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">
+              <span className="h-px w-8 bg-accent-400" aria-hidden="true" />
+              Baraka Medical Devices
+            </p>
+            <h1 className="mt-6 text-4xl font-bold leading-[1.1] tracking-tight text-brand-900 sm:text-5xl lg:text-6xl">
+              Equipping better care, every day
+            </h1>
+            <p className="mt-6 text-base leading-7 text-gray-700 sm:text-lg sm:leading-8">
+              Medical devices, monitoring solutions and consumables for hospitals, clinics,
+              laboratories and pharmacies across Qatar.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* What we do */}
+      <section className="border-b border-gray-200 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+          <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
+            <div>
+              <p className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">
+                <span className="h-px w-8 bg-accent-400" aria-hidden="true" />
+                Medical devices, Doha
+              </p>
+
+              <h2 className="mt-7 text-3xl font-bold leading-[1.15] tracking-tight text-gray-900 sm:text-4xl">
+                Quality medical devices for the people who rely on them
+              </h2>
+
+              <p className="mt-6 max-w-xl text-lg leading-8 text-gray-600">
+                Baraka supplies hospitals, clinics, laboratories and pharmacies with dependable
+                equipment and consumables, backed by technical guidance and responsive support.
+              </p>
+
+              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  to="/contact"
+                  className="group inline-flex items-center justify-center gap-2 rounded-md bg-brand-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
+                >
+                  Request a quote
+                  <ArrowRight
+                    className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                    aria-hidden="true"
+                  />
+                </Link>
+                <Link
+                  to="/about"
+                  className="inline-flex items-center justify-center rounded-md border border-gray-300 px-6 py-3 font-semibold text-gray-800 transition-colors hover:border-brand-600 hover:text-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
+                >
+                  About us
+                </Link>
               </div>
             </div>
 
-            {/* Right Content - Visual */}
-            <div className="relative hidden lg:block">
-              <div className="relative">
-                {/* Main Card */}
-                <div className="bg-white rounded-3xl shadow-2xl p-8 border border-gray-100">
-                  <div className="space-y-6">
-                    {/* Feature items */}
-                    <div className="flex items-start gap-4 p-4 bg-red-50 rounded-xl">
-                      <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <Heart className="w-6 h-6 text-white" />
-                      </div>
+            <div className="lg:pl-8">
+              <div className="rounded-lg border border-gray-200 bg-gray-50 p-8 sm:p-10">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gray-500">
+                  What we supply
+                </p>
+                <ul className="mt-7 divide-y divide-gray-200">
+                  {categories.map(({ title, description, icon: Icon }) => (
+                    <li key={title} className="flex gap-4 py-5 first:pt-0 last:pb-0">
+                      <Icon className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" aria-hidden="true" />
                       <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">Quality Certified</h3>
-                        <p className="text-sm text-gray-600">International standards compliance</p>
+                        <p className="font-semibold text-gray-900">{title}</p>
+                        <p className="mt-1 text-sm leading-6 text-gray-600">{description}</p>
                       </div>
-                    </div>
-
-                    <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl">
-                      <div className="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <Shield className="w-6 h-6 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">Safe & Reliable</h3>
-                        <p className="text-sm text-gray-600">Trusted by healthcare professionals</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl">
-                      <div className="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <Zap className="w-6 h-6 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">Fast Delivery</h3>
-                        <p className="text-sm text-gray-600">Quick dispatch across Qatar</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Floating badge */}
-                <div className="absolute -top-6 -right-6 bg-red-600 text-white px-6 py-3 rounded-full shadow-lg">
-                  <p className="text-sm font-semibold">Doha, Qatar 🇶🇦</p>
-                </div>
-
-                {/* Floating badge bottom */}
-                <div className="absolute -bottom-6 -left-6 bg-white px-6 py-4 rounded-2xl shadow-xl border border-gray-100">
-                  <p className="text-xs text-gray-500 mb-1">Trusted by</p>
-                  <p className="text-2xl font-bold text-gray-900">Healthcare Providers</p>
-                </div>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Us</h2>
-            <p className="text-lg text-gray-600">
-              We provide comprehensive medical device solutions
+      {/* Commitments */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+          <div className="max-w-2xl">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              A supplier your team can plan around
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-gray-600">
+              Reliable products and steady service, so clinical decisions are never limited by
+              what is on the shelf.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="p-8 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow"
-              >
-                <div className="mb-4">{service.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
+          <div className="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+            {commitments.map(({ title, description, icon: Icon }) => (
+              <div key={title} className="border-t border-gray-200 pt-7">
+                <Icon className="h-6 w-6 text-brand-600" aria-hidden="true" />
+                <h3 className="mt-5 text-lg font-bold text-gray-900">{title}</h3>
+                <p className="mt-2 leading-7 text-gray-600">{description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-red-600 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to Get Started?
-          </h2>
-          <p className="text-xl text-red-100 mb-8">
-            Contact us today to discuss your medical device needs
-          </p>
-          <a
-            href="/contact"
-            className="inline-block bg-white text-red-600 px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors"
-          >
-            Contact Us Now
-          </a>
+      {/* Closing */}
+      <section className="relative overflow-hidden border-t border-gray-200 bg-gray-50">
+        <div
+          className="absolute -left-32 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-brand-100/70 blur-3xl"
+          aria-hidden="true"
+        />
+        <div
+          className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-brand-50 blur-2xl"
+          aria-hidden="true"
+        />
+
+        <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+          <div className="relative overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-[0_20px_60px_-32px_rgba(28,67,91,0.28)] sm:rounded-3xl">
+            <div
+              className="absolute inset-y-0 left-0 w-1.5 bg-gradient-to-b from-brand-400 to-brand-700"
+              aria-hidden="true"
+            />
+
+            <div className="grid gap-8 px-7 py-10 sm:px-10 sm:py-12 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-16 lg:px-14 lg:py-14">
+              <div className="max-w-2xl">
+                <p className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-brand-700">
+                  <span className="h-1.5 w-1.5 rounded-full bg-brand-500" aria-hidden="true" />
+                  Here when you need us
+                </p>
+                <h2 className="mt-5 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                  Let’s find the right solution for your facility
+                </h2>
+                <p className="mt-4 max-w-xl text-base leading-7 text-gray-600 sm:text-lg sm:leading-8">
+                  Tell us what you need and our team will come back with suitable options, clear
+                  pricing and current availability.
+                </p>
+              </div>
+
+              <div className="lg:text-right">
+                <Link
+                  to="/contact"
+                  className="group inline-flex items-center justify-center gap-3 rounded-full bg-brand-600 px-7 py-3.5 font-semibold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-brand-700 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
+                >
+                  Talk to our team
+                  <span className="grid h-7 w-7 place-items-center rounded-full bg-white/15">
+                    <ArrowRight
+                      className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                      aria-hidden="true"
+                    />
+                  </span>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
