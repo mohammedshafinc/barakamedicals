@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 @theme {
+  --font-sans: "DM Sans", Arial, Helvetica, sans-serif;
+  --font-serif: "Caudex", Georgia, "Times New Roman", serif;
+
   /* ------------------------------------------------------------------
      Brand — the logo blue (#2776a2 sits at 600). Clinical and steady.
      Use 600 for primary actions, 800/900 for large dark surfaces.
@@ -54,14 +57,31 @@
   body {
     background-color: var(--color-white);
     color: var(--color-gray-700);
+    font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
   }
 
   ::selection {
     background-color: var(--color-brand-100);
     color: var(--color-brand-900);
   }
+}
+
+/* Primary typography uses Caudex Bold; supporting and interface text remains sans-serif. */
+h1,
+h2,
+h3,
+.font-serif {
+  font-family: var(--font-serif);
+  font-weight: 700;
 }
 
 .hero-aurora {

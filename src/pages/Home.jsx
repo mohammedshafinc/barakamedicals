@@ -13,6 +13,7 @@ import {
   Stethoscope,
   Truck,
 } from 'lucide-react';
+import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 
 const products = [
@@ -222,28 +223,31 @@ function ProductFeature({ product, reverse }) {
 const Home = () => {
   return (
     <div className="bg-[#f4f1e9] text-slate-950">
-      <section className="relative isolate flex min-h-[100svh] items-end overflow-hidden bg-[#dcebed] text-white">
+      <section className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-[#dcebed] text-white">
         <div className="hero-aurora" aria-hidden="true" />
         <div
           className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,25,22,0.38)_0%,rgba(10,25,22,0.16)_48%,rgba(10,25,22,0.03)_82%),linear-gradient(180deg,rgba(7,20,22,0.24)_0%,transparent_30%,rgba(7,18,14,0.32)_100%)]"
           aria-hidden="true"
         />
 
-        <div className="page-reveal relative mx-auto w-full max-w-[1340px] px-5 pb-10 pt-32 sm:px-8 sm:pb-14 lg:px-10 lg:pb-16 xl:px-8">
-          <div className="max-w-2xl">
+        <div className="page-reveal relative mx-auto w-full max-w-[1340px] px-5 py-32 sm:px-8 sm:py-36 lg:px-10 xl:px-8">
+          <div className="mx-auto max-w-[36rem] text-center">
             <h1
-              className="font-serif text-[46px] font-normal leading-[0.98] tracking-[-0.045em] sm:text-[68px] lg:text-[82px]"
+              className="font-serif text-[46px] font-normal leading-[0.98] tracking-[-0.045em] sm:text-[64px] lg:text-[76px]"
               aria-label="Equipping better care, every day"
             >
-              <AnimatedLine text="Equipping better care," startDelay={180} />
-              <br />
-              <AnimatedLine text="every day." startDelay={520} />
+              <span className="block sm:whitespace-nowrap">
+                <AnimatedLine text="Equipping better" startDelay={180} />
+              </span>
+              <span className="block sm:whitespace-nowrap">
+                <AnimatedLine text="care, every day." startDelay={430} />
+              </span>
             </h1>
-            <p className="mt-6 max-w-xl text-[15px] leading-7 text-white/75 sm:text-base">
+            <p className="mx-auto mt-6 max-w-md text-[15px] leading-7 text-white/75 sm:text-base">
               Medical devices, monitoring solutions and consumables for hospitals, clinics,
               laboratories and pharmacies across Qatar.
             </p>
-            <div className="mt-7 flex flex-wrap gap-3">
+            <div className="mt-7 flex flex-wrap justify-center gap-3">
               <ArrowLink to="/contact" light>Request a quote</ArrowLink>
               <Link
                 to="/about"
@@ -417,37 +421,7 @@ const Home = () => {
         </div>
       </section>
 
-      <footer className="rounded-t-[2.5rem] bg-white px-5 pb-8 pt-16 sm:px-8 sm:pt-20">
-        <div className="mx-auto max-w-[1180px]">
-          <div className="grid gap-12 border-b border-slate-200 pb-14 md:grid-cols-[1.4fr_0.6fr_0.6fr]">
-            <div className="max-w-md">
-              <p className="font-serif text-3xl tracking-[-0.04em]">Baraka Medical Devices</p>
-              <p className="mt-4 text-sm leading-7 text-slate-500">
-                Quality medical devices, monitoring solutions and consumables backed by practical guidance and responsive support.
-              </p>
-            </div>
-            <div>
-              <div className="flex flex-col gap-3 text-sm">
-                <a href="/#products" className="hover:text-slate-500">Products</a>
-                <a href="/#why-baraka" className="hover:text-slate-500">Why Baraka</a>
-                <a href="/#process" className="hover:text-slate-500">How it works</a>
-                <Link to="/about" className="hover:text-slate-500">About us</Link>
-              </div>
-            </div>
-            <div>
-              <div className="flex flex-col gap-3 text-sm">
-                <a href="mailto:info@barakamedicals.com" className="hover:text-slate-500">info@barakamedicals.com</a>
-                <span className="text-slate-500">Doha, Qatar</span>
-                <Link to="/contact" className="inline-flex items-center gap-2 hover:text-slate-500">Contact page <ArrowRight className="h-3 w-3" /></Link>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col gap-3 pt-6 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
-            <p>© {new Date().getFullYear()} Baraka Medical Devices.</p>
-            <p>Medical supply with clarity and care.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
