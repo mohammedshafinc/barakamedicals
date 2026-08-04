@@ -19,7 +19,7 @@ A modern, minimal website for Baraka Medicals - a medical devices company based 
 - Tailwind CSS
 - Lucide React (Icons)
 
-## Getting Started
+## Getting Startxed
 
 ### Installation
 
