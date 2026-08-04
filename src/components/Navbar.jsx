@@ -14,8 +14,6 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { pathname } = useLocation();
-  const isHome = pathname === '/';
-  const isOverlay = isHome && !isScrolled && !isOpen;
 
   useEffect(() => {
     const updateNavbar = () => setIsScrolled(window.scrollY > 32);
@@ -27,96 +25,109 @@ const Navbar = () => {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 px-5 transition-all duration-300 sm:px-8 lg:px-10 xl:px-8 ${
-        isOverlay ? '' : 'bg-[#f4f1e9]/92 shadow-[0_1px_0_rgba(15,23,42,0.08)] backdrop-blur-xl'
-      }`}
-    >
-      <nav
-        className={`mx-auto flex h-20 w-full max-w-[1340px] items-center justify-between border-b transition-colors duration-300 sm:h-24 ${
-          isOverlay ? 'border-white/20' : 'border-transparent'
-        }`}
-        aria-label="Main navigation"
-      >
-        <Link
-          to="/"
-          className={`text-[20px] font-medium tracking-[-0.035em] transition-opacity hover:opacity-70 focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 sm:text-[21px] ${
-            isOverlay ? 'text-white focus-visible:outline-white' : 'text-slate-950 focus-visible:outline-slate-950'
-          }`}
-          aria-label="Baraka Medical Devices home"
-          onClick={closeMenu}
-        >
-          Baraka Medical Devices
-        </Link>
-
-        <div className="hidden items-center gap-6 lg:flex xl:gap-8">
-          {navigation.map(({ label, to }) => (
-            <a
-              key={label}
-              href={to}
-              className={`text-[13px] font-normal transition-colors ${
-                isOverlay ? 'text-white/72 hover:text-white' : 'text-slate-600 hover:text-slate-950'
-              }`}
-            >
-              {label}
-            </a>
-          ))}
-        </div>
-
-        <Link
-          to="/contact"
-          className={`group hidden items-center gap-2 rounded-full px-4 py-2.5 text-[13px] font-medium transition-all hover:-translate-y-0.5 lg:inline-flex ${
-            isOverlay ? 'bg-white text-slate-950 hover:bg-white/90' : 'bg-slate-950 text-white hover:bg-slate-800'
+    <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-4 lg:px-6">
+      <div className="relative mx-auto max-w-[1380px]">
+        <div
+          className="pointer-events-none absolute inset-x-10 -bottom-2 h-12 rounded-full bg-white/35 blur-2xl"
+          aria-hidden="true"
+        />
+        <div
+          className={`relative overflow-hidden rounded-[1.35rem] border text-slate-950 backdrop-blur-2xl transition-all duration-500 ${
+            isScrolled
+              ? 'border-white/75 bg-[#f7f8f4]/90 shadow-[0_12px_36px_-18px_rgba(22,48,42,0.42)]'
+              : 'border-white/55 bg-white/68 shadow-[0_12px_34px_-20px_rgba(22,48,42,0.32)]'
           }`}
         >
-          Request a quote
-          <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
-        </Link>
+          <div
+            className="pointer-events-none absolute inset-x-12 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent"
+            aria-hidden="true"
+          />
 
-        <button
-          type="button"
-          className={`grid h-10 w-10 place-items-center rounded-full border transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 lg:hidden ${
-            isOverlay
-              ? 'border-white/25 bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white'
-              : 'border-slate-300 bg-white/60 text-slate-950 hover:bg-white focus-visible:outline-slate-950'
-          }`}
-          onClick={() => setIsOpen((open) => !open)}
-          aria-expanded={isOpen}
-          aria-controls="mobile-navigation"
-          aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
-        >
-          {isOpen ? <X className="h-4.5 w-4.5" aria-hidden="true" /> : <Menu className="h-4.5 w-4.5" aria-hidden="true" />}
-        </button>
-      </nav>
-
-      {isOpen && (
-        <nav
-          id="mobile-navigation"
-          className="mx-auto mb-3 max-w-[1340px] rounded-2xl border border-slate-950/10 bg-white/95 p-3 text-slate-950 shadow-2xl backdrop-blur-xl lg:hidden"
-          aria-label="Mobile navigation"
-        >
-          <div className="space-y-1">
-            {navigation.map(({ label, to }) => (
-              <a
-                key={label}
-                href={to}
-                onClick={closeMenu}
-                className="flex items-center justify-between rounded-xl px-4 py-3 text-[14px] font-normal transition-colors hover:bg-[#f4f1e9]"
-              >
-                {label}
-              </a>
-            ))}
-          </div>
-          <Link
-            to="/contact"
-            onClick={closeMenu}
-            className="group mt-3 flex items-center justify-between rounded-xl bg-slate-950 px-4 py-3 text-[13px] font-medium text-white"
+          <nav
+            className="relative flex h-16 w-full items-center justify-between px-4 sm:h-[4.5rem] sm:px-6 lg:px-7"
+            aria-label="Main navigation"
           >
-            Request a quote
-            <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
-          </Link>
-        </nav>
-      )}
+            <Link
+              to="/"
+              className="text-[17px] font-medium tracking-[-0.035em] text-slate-900 transition-opacity hover:opacity-65 focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-800 sm:text-[19px]"
+              aria-label="Baraka Medical Devices home"
+              onClick={closeMenu}
+            >
+              Baraka Medical Devices
+            </Link>
+
+            <div className="hidden items-center gap-5 lg:flex xl:gap-7">
+              {navigation.map(({ label, to }) => (
+                <a
+                  key={label}
+                  href={to}
+                  className="text-[12px] font-normal text-slate-600 transition-colors hover:text-slate-950"
+                >
+                  {label}
+                </a>
+              ))}
+            </div>
+
+            <Link
+              to="/contact"
+              className="group hidden items-center gap-2 rounded-full border border-white/55 bg-[#d9efb9] px-4 py-2.5 text-[12px] font-medium text-[#263c2b] shadow-[0_6px_18px_-10px_rgba(65,99,52,0.7)] transition-all hover:-translate-y-0.5 hover:bg-[#cfeeaa] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#38583d] lg:inline-flex"
+            >
+              Request a quote
+              <ArrowRight
+                className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5"
+                aria-hidden="true"
+              />
+            </Link>
+
+            <button
+              type="button"
+              className="grid h-10 w-10 place-items-center rounded-full border border-white/70 bg-white/55 text-slate-900 shadow-sm transition-colors hover:bg-white/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-800 lg:hidden"
+              onClick={() => setIsOpen((open) => !open)}
+              aria-expanded={isOpen}
+              aria-controls="mobile-navigation"
+              aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            >
+              {isOpen ? (
+                <X className="h-4.5 w-4.5" aria-hidden="true" />
+              ) : (
+                <Menu className="h-4.5 w-4.5" aria-hidden="true" />
+              )}
+            </button>
+          </nav>
+
+          {isOpen && (
+            <nav
+              id="mobile-navigation"
+              className="relative border-t border-slate-950/8 bg-white/28 p-3 text-slate-950 lg:hidden"
+              aria-label="Mobile navigation"
+            >
+              <div className="space-y-1">
+                {navigation.map(({ label, to }) => (
+                  <a
+                    key={label}
+                    href={to}
+                    onClick={closeMenu}
+                    className="flex items-center justify-between rounded-xl px-4 py-3 text-[14px] font-normal transition-colors hover:bg-white/55"
+                  >
+                    {label}
+                  </a>
+                ))}
+              </div>
+              <Link
+                to="/contact"
+                onClick={closeMenu}
+                className="group mt-3 flex items-center justify-between rounded-xl bg-[#d9efb9] px-4 py-3 text-[13px] font-medium text-[#263c2b]"
+              >
+                Request a quote
+                <ArrowRight
+                  className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5"
+                  aria-hidden="true"
+                />
+              </Link>
+            </nav>
+          )}
+        </div>
+      </div>
     </header>
   );
 };

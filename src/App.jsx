@@ -10,7 +10,7 @@ function AppShell() {
   const isLandingPage = pathname === '/';
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="trust-interface flex min-h-screen flex-col">
       <Navbar />
       <main className="flex-grow">
         <Routes>

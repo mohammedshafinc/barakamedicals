@@ -85,11 +85,7 @@ const Contact = () => {
 
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-20 lg:px-8 lg:py-24">
           <div>
-            <p className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">
-              <span className="h-px w-8 bg-brand-400" aria-hidden="true" />
-              Contact Baraka
-            </p>
-            <h1 className="mt-6 max-w-3xl text-4xl font-bold leading-[1.1] tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+            <h1 className="max-w-3xl text-4xl font-bold leading-[1.1] tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
               Let’s find what your facility needs
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-gray-600">
@@ -143,10 +139,7 @@ const Contact = () => {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
             <aside>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">
-                Reach our team
-              </p>
-              <h2 className="mt-4 text-3xl font-bold tracking-tight text-gray-900">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900">
                 Start the conversation your way
               </h2>
               <p className="mt-4 leading-7 text-gray-600">
@@ -162,10 +155,7 @@ const Contact = () => {
                         <Icon className="h-5 w-5" aria-hidden="true" />
                       </span>
                       <span className="min-w-0 flex-1">
-                        <span className="block text-xs font-semibold uppercase tracking-[0.14em] text-gray-500">
-                          {label}
-                        </span>
-                        <span className="mt-1 block font-bold text-gray-900">{value}</span>
+                        <span className="block font-bold text-gray-900">{value}</span>
                         <span className="mt-1 block text-sm leading-5 text-gray-500">{detail}</span>
                       </span>
                       {href && (
@@ -211,10 +201,7 @@ const Contact = () => {
             <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-[0_24px_70px_-42px_rgba(18,43,60,0.3)] sm:rounded-3xl sm:p-9 lg:p-11">
               <div className="flex flex-col gap-3 border-b border-gray-200 pb-7 sm:flex-row sm:items-end sm:justify-between">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">
-                    Send an enquiry
-                  </p>
-                  <h2 className="mt-3 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+                  <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
                     Tell us how we can help
                   </h2>
                 </div>

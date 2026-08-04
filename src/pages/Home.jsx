@@ -18,7 +18,6 @@ import { Link } from 'react-router-dom';
 const products = [
   {
     id: 'diagnostics',
-    eyebrow: 'Diagnostic equipment',
     title: 'Clarity for every decision.',
     description:
       'Reliable diagnostic instruments selected to help clinical teams assess with confidence and work without unnecessary delays.',
@@ -27,7 +26,6 @@ const products = [
   },
   {
     id: 'monitoring',
-    eyebrow: 'Patient monitoring',
     title: 'Stay informed at every moment.',
     description:
       'Dependable monitoring solutions for continuous care, with practical guidance to help your team choose the right configuration.',
@@ -36,7 +34,6 @@ const products = [
   },
   {
     id: 'consumables',
-    eyebrow: 'Medical consumables',
     title: 'Everyday essentials, always ready.',
     description:
       'Consistent access to the items your teams use every day, supported by responsive communication and straightforward ordering.',
@@ -131,8 +128,7 @@ function ProductPanel({ id }) {
       <div className="absolute left-1/2 top-1/2 w-[78%] max-w-sm -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-white/70 bg-white/95 p-4 shadow-[0_24px_70px_-24px_rgba(15,23,42,0.55)] backdrop-blur sm:p-5">
         <div className="flex items-center justify-between gap-4">
           <div>
-            <p className="text-[10px] uppercase tracking-[0.18em] text-slate-400">Equipment enquiry</p>
-            <p className="mt-1 text-sm font-medium text-slate-900">Diagnostic requirement</p>
+            <p className="text-sm font-medium text-slate-900">Diagnostic requirement</p>
           </div>
           <span className="grid h-8 w-8 place-items-center rounded-full bg-[#e9f0e4] text-[#476042]">
             <Stethoscope className="h-4 w-4" aria-hidden="true" />
@@ -154,8 +150,7 @@ function ProductPanel({ id }) {
       <div className="absolute left-1/2 top-1/2 w-[78%] max-w-sm -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-white/70 bg-white/95 p-4 shadow-[0_24px_70px_-24px_rgba(15,23,42,0.55)] backdrop-blur sm:p-5">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-[10px] uppercase tracking-[0.18em] text-slate-400">Monitoring solutions</p>
-            <p className="mt-1 text-sm font-medium text-slate-900">Configuration overview</p>
+            <p className="text-sm font-medium text-slate-900">Configuration overview</p>
           </div>
           <Activity className="h-5 w-5 text-[#527c78]" aria-hidden="true" />
         </div>
@@ -171,8 +166,7 @@ function ProductPanel({ id }) {
     <div className="absolute left-1/2 top-1/2 w-[78%] max-w-sm -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-white/70 bg-white/95 p-4 shadow-[0_24px_70px_-24px_rgba(15,23,42,0.55)] backdrop-blur sm:p-5">
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-[10px] uppercase tracking-[0.18em] text-slate-400">Supply status</p>
-          <p className="mt-1 text-sm font-medium text-slate-900">Everyday essentials</p>
+          <p className="text-sm font-medium text-slate-900">Everyday essentials</p>
         </div>
         <Boxes className="h-5 w-5 text-[#976c54]" aria-hidden="true" />
       </div>
@@ -209,10 +203,7 @@ function ProductFeature({ product, reverse }) {
       </div>
 
       <div className={`max-w-md ${reverse ? 'lg:order-1 lg:justify-self-end' : ''}`}>
-        <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-slate-500">
-          {product.eyebrow}
-        </p>
-        <h3 className="mt-4 font-serif text-4xl leading-[1.05] tracking-[-0.035em] text-slate-950 sm:text-5xl">
+        <h3 className="font-serif text-4xl leading-[1.05] tracking-[-0.035em] text-slate-950 sm:text-5xl">
           {product.title}
         </h3>
         <p className="mt-5 text-[15px] leading-7 text-slate-600">{product.description}</p>
@@ -231,24 +222,17 @@ function ProductFeature({ product, reverse }) {
 const Home = () => {
   return (
     <div className="bg-[#f4f1e9] text-slate-950">
-      <section className="relative isolate flex min-h-[100svh] items-end overflow-hidden bg-slate-950 text-white">
-        <img
-          src="https://cdn.sceneai.art/Hero%20Section%20Video/802fa01f-44ef-4ab4-ac73-62015fe06eef.png"
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover object-[62%_center] sm:object-center"
-          fetchPriority="high"
-          decoding="async"
+      <section className="relative isolate flex min-h-[100svh] items-end overflow-hidden bg-[#dcebed] text-white">
+        <div className="hero-aurora" aria-hidden="true" />
+        <div
+          className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,25,22,0.38)_0%,rgba(10,25,22,0.16)_48%,rgba(10,25,22,0.03)_82%),linear-gradient(180deg,rgba(7,20,22,0.24)_0%,transparent_30%,rgba(7,18,14,0.32)_100%)]"
+          aria-hidden="true"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,11,18,0.78)_0%,rgba(3,11,18,0.44)_45%,rgba(3,11,18,0.08)_82%),linear-gradient(0deg,rgba(3,11,18,0.7)_0%,transparent_56%)]" aria-hidden="true" />
 
         <div className="page-reveal relative mx-auto w-full max-w-[1340px] px-5 pb-10 pt-32 sm:px-8 sm:pb-14 lg:px-10 lg:pb-16 xl:px-8">
           <div className="max-w-2xl">
-            <p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-2 text-[12px] font-normal backdrop-blur-md">
-              <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
-              Medical devices · Doha, Qatar
-            </p>
             <h1
-              className="mt-6 font-serif text-[46px] font-normal leading-[0.98] tracking-[-0.045em] sm:text-[68px] lg:text-[82px]"
+              className="font-serif text-[46px] font-normal leading-[0.98] tracking-[-0.045em] sm:text-[68px] lg:text-[82px]"
               aria-label="Equipping better care, every day"
             >
               <AnimatedLine text="Equipping better care," startDelay={180} />
@@ -277,8 +261,7 @@ const Home = () => {
           <span className="mx-auto grid h-12 w-12 place-items-center rounded-full border border-slate-300">
             <Sparkles className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
           </span>
-          <p className="mt-7 text-[11px] uppercase tracking-[0.22em] text-slate-500">What we do</p>
-          <h2 className="mt-5 font-serif text-4xl leading-[1.08] tracking-[-0.035em] sm:text-6xl">
+          <h2 className="mt-7 font-serif text-4xl leading-[1.08] tracking-[-0.035em] sm:text-6xl">
             Medical equipment that keeps care moving.
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-7 text-slate-600">
@@ -299,8 +282,7 @@ const Home = () => {
       <section id="why-baraka" className="scroll-mt-28 overflow-hidden bg-[#e5ebe2] px-5 py-28 sm:px-8 sm:py-36">
         <div className="mx-auto max-w-[1180px]">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-[11px] uppercase tracking-[0.22em] text-slate-500">Why Baraka</p>
-            <h2 className="mt-5 font-serif text-4xl leading-[1.06] tracking-[-0.04em] sm:text-6xl">
+            <h2 className="font-serif text-4xl leading-[1.06] tracking-[-0.04em] sm:text-6xl">
               A dependable partner for the products your team relies on.
             </h2>
           </div>
@@ -318,8 +300,7 @@ const Home = () => {
               <img src="/hero2.png" alt="Clinical equipment arranged in a modern medical setting." className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-7 text-white">
-                <p className="text-[11px] uppercase tracking-[0.2em] text-white/60">Steady support</p>
-                <p className="mt-2 font-serif text-3xl">Clear guidance from enquiry to delivery.</p>
+                <p className="font-serif text-3xl">Clear guidance from enquiry to delivery.</p>
               </div>
             </div>
 
@@ -337,8 +318,7 @@ const Home = () => {
       <section className="px-5 py-28 sm:px-8 sm:py-40">
         <div className="mx-auto grid max-w-[1180px] items-center gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <div className="max-w-md">
-            <p className="text-[11px] uppercase tracking-[0.22em] text-slate-500">Local service</p>
-            <h2 className="mt-5 font-serif text-4xl leading-[1.06] tracking-[-0.04em] sm:text-5xl">
+            <h2 className="font-serif text-4xl leading-[1.06] tracking-[-0.04em] sm:text-5xl">
               Based in Doha. Ready to support your facility.
             </h2>
             <p className="mt-5 text-[15px] leading-7 text-slate-600">
@@ -359,8 +339,7 @@ const Home = () => {
                   <MapPin className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
                 </span>
                 <div>
-                  <p className="text-[10px] uppercase tracking-[0.18em] text-slate-400">Service location</p>
-                  <p className="mt-1 text-sm font-medium">Doha, Qatar</p>
+                  <p className="text-sm font-medium">Doha, Qatar</p>
                 </div>
               </div>
               <div className="my-5 h-px bg-slate-200" />
@@ -377,8 +356,7 @@ const Home = () => {
       <section id="process" className="scroll-mt-28 bg-[#ebe4d9] px-5 py-28 sm:px-8 sm:py-36">
         <div className="mx-auto max-w-[1180px]">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="text-[11px] uppercase tracking-[0.22em] text-slate-500">How it works</p>
-            <h2 className="mt-5 font-serif text-4xl tracking-[-0.04em] sm:text-6xl">Simple from the first conversation.</h2>
+            <h2 className="font-serif text-4xl tracking-[-0.04em] sm:text-6xl">Simple from the first conversation.</h2>
           </div>
 
           <div className="mt-14 grid gap-4 md:grid-cols-3">
@@ -403,8 +381,7 @@ const Home = () => {
       <section id="faq" className="scroll-mt-28 px-5 py-28 sm:px-8 sm:py-36">
         <div className="mx-auto grid max-w-[1000px] gap-12 lg:grid-cols-[0.65fr_1.35fr] lg:gap-24">
           <div>
-            <p className="text-[11px] uppercase tracking-[0.22em] text-slate-500">FAQ</p>
-            <h2 className="mt-5 font-serif text-4xl tracking-[-0.04em] sm:text-5xl">Useful answers, clearly stated.</h2>
+            <h2 className="font-serif text-4xl tracking-[-0.04em] sm:text-5xl">Useful answers, clearly stated.</h2>
           </div>
           <div className="border-t border-slate-300">
             {faqs.map(({ question, answer }) => (
@@ -450,8 +427,7 @@ const Home = () => {
               </p>
             </div>
             <div>
-              <p className="text-[11px] uppercase tracking-[0.2em] text-slate-400">Explore</p>
-              <div className="mt-5 flex flex-col gap-3 text-sm">
+              <div className="flex flex-col gap-3 text-sm">
                 <a href="/#products" className="hover:text-slate-500">Products</a>
                 <a href="/#why-baraka" className="hover:text-slate-500">Why Baraka</a>
                 <a href="/#process" className="hover:text-slate-500">How it works</a>
@@ -459,8 +435,7 @@ const Home = () => {
               </div>
             </div>
             <div>
-              <p className="text-[11px] uppercase tracking-[0.2em] text-slate-400">Contact</p>
-              <div className="mt-5 flex flex-col gap-3 text-sm">
+              <div className="flex flex-col gap-3 text-sm">
                 <a href="mailto:info@barakamedicals.com" className="hover:text-slate-500">info@barakamedicals.com</a>
                 <span className="text-slate-500">Doha, Qatar</span>
                 <Link to="/contact" className="inline-flex items-center gap-2 hover:text-slate-500">Contact page <ArrowRight className="h-3 w-3" /></Link>

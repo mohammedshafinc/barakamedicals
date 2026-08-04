@@ -1,186 +1,58 @@
+import { ArrowRight, Mail, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Heart, Mail, MapPin, Phone } from 'lucide-react';
-import Logo from './Logo';
-
-const quickLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'About Us', href: '/about' },
-  { label: 'Contact', href: '/contact' },
-];
-
-const contactItems = [
-  { label: 'info@barakamedicals.com', href: 'mailto:info@barakamedicals.com' },
-  { label: '+974 XXXX XXXX', href: 'tel:+974XXXXXXXX' },
-];
-
-const Instagram = ({ className = 'h-5 w-5' }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-    <rect x="3" y="3" width="18" height="18" rx="5" />
-    <circle cx="12" cy="12" r="4" />
-    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
-  </svg>
-);
-
-const Facebook = ({ className = 'h-5 w-5' }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <path d="M13.6 21v-8h2.8l.4-3.2h-3.2v-2c0-.9.3-1.6 1.7-1.6H17V3.3c-.8-.1-1.7-.2-2.5-.2-2.5 0-4.2 1.5-4.2 4.4v2.3H7.5V13h2.8v8h3.3Z" />
-  </svg>
-);
-
-const Linkedin = ({ className = 'h-5 w-5' }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <path d="M6.5 8.2A2.1 2.1 0 1 0 6.5 4a2.1 2.1 0 0 0 0 4.2ZM4.7 9.8h3.6V20H4.7V9.8ZM10.4 9.8h3.4v1.4h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.2 2.3 4.2 5.4V20H18v-4.7c0-1.1 0-2.7-1.7-2.7s-2 1.3-2 2.6V20h-3.6V9.8Z" />
-  </svg>
-);
-
-const WhatsAppIcon = () => (
-  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.663-2.06-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-  </svg>
-);
-
-const socialIcons = [
-  { label: 'Instagram', href: '#', icon: <Instagram className="h-5 w-5" aria-hidden="true" /> },
-  { label: 'Facebook', href: '#', icon: <Facebook className="h-5 w-5" aria-hidden="true" /> },
-  { label: 'WhatsApp', href: 'https://wa.me/974XXXXXXXX', icon: <WhatsAppIcon /> },
-  { label: 'LinkedIn', href: '#', icon: <Linkedin className="h-5 w-5" aria-hidden="true" /> },
-];
-
-function FooterColumn({ heading, items }) {
-  return (
-    <div className="flex flex-col gap-3.5 md:gap-6 min-w-0">
-      <p className="text-brand-900 text-xs md:text-sm font-bold tracking-wider uppercase">
-        {heading}
-      </p>
-      <ul className="flex flex-col gap-2.5 md:gap-4">
-        {items.map((item) => (
-          <li key={item.label}>
-            {item.href.startsWith('http') || item.href.startsWith('mailto:') || item.href.startsWith('tel:') ? (
-              <a
-                href={item.href}
-                className="text-gray-500 text-sm md:text-base hover:text-brand-900 transition-colors"
-              >
-                {item.label}
-              </a>
-            ) : (
-              <Link
-                to={item.href}
-                className="text-gray-500 text-sm md:text-base hover:text-brand-900 transition-colors"
-              >
-                {item.label}
-              </Link>
-            )}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
 
 const Footer = () => {
   return (
-    <>
-      <footer className="relative w-full border-t border-gray-200 bg-white overflow-hidden">
-        <div className="relative z-10 flex flex-col items-center px-4 pt-12 pb-2 md:px-6 md:pt-20">
-          <div className="w-full max-w-7xl mx-auto flex flex-col gap-8 md:gap-16">
-            {/* Main content row */}
-            <div className="flex flex-col md:flex-row md:items-start gap-8 md:gap-16 w-full">
-              {/* Brand column */}
-              <div className="flex flex-col items-start gap-6 w-full md:max-w-md">
-                <Link to="/" aria-label="Baraka Medical Devices — Home">
-                  <Logo className="h-16 w-auto sm:h-18" />
-                </Link>
-                <p className="text-gray-500 text-sm md:text-base leading-relaxed max-w-sm">
-                  Empowering healthcare by providing quality medical devices and fostering trusted connections within the industry.
-                </p>
-                <div className="flex gap-5 items-center">
-                  {socialIcons.map(({ label, href, icon }) => (
-                    <a
-                      key={label}
-                      href={href}
-                      className="inline-flex items-center justify-center w-10 h-10 text-gray-500 hover:text-brand-700 transition-colors"
-                      aria-label={label}
-                    >
-                      {icon}
-                    </a>
-                  ))}
-                </div>
-              </div>
+    <footer className="rounded-t-[2.5rem] bg-white px-5 pb-8 pt-16 text-slate-950 sm:px-8 sm:pt-20">
+      <div className="mx-auto max-w-[1180px]">
+        <div className="grid gap-12 border-b border-slate-200 pb-14 md:grid-cols-[1.4fr_0.6fr_0.7fr]">
+          <div className="max-w-md">
+            <Link to="/" className="font-serif text-3xl tracking-[-0.04em]" aria-label="Baraka Medical Devices home">
+              Baraka Medical Devices
+            </Link>
+            <p className="mt-4 text-sm leading-7 text-slate-500">
+              Quality medical devices, monitoring solutions and consumables backed by practical
+              guidance and responsive support.
+            </p>
+          </div>
 
-              {/* Links columns */}
-              <div className="flex flex-wrap md:flex-nowrap items-start justify-between md:flex-1 gap-8 md:gap-12 w-full">
-                <FooterColumn heading="Quick Links" items={quickLinks} />
-                
-                {/* Location column */}
-                <div className="flex flex-col gap-3.5 md:gap-6 min-w-0 md:max-w-xs">
-                  <p className="text-brand-900 text-xs md:text-sm font-bold tracking-wider uppercase">
-                    Location
-                  </p>
-                  <div className="flex flex-col gap-2">
-                    <p className="text-brand-900 text-sm md:text-base font-bold">
-                      Baraka Medicals Doha
-                    </p>
-                    <p className="text-gray-500 text-sm md:text-base leading-relaxed">
-                      Doha, Qatar
-                    </p>
-                  </div>
-                </div>
+          <div>
+            <nav className="flex flex-col gap-3 text-sm" aria-label="Footer navigation">
+              <a href="/#products" className="transition-colors hover:text-slate-500">Products</a>
+              <a href="/#why-baraka" className="transition-colors hover:text-slate-500">Why Baraka</a>
+              <a href="/#process" className="transition-colors hover:text-slate-500">How it works</a>
+              <Link to="/about" className="transition-colors hover:text-slate-500">About us</Link>
+              <Link to="/contact" className="transition-colors hover:text-slate-500">Contact</Link>
+            </nav>
+          </div>
 
-                <FooterColumn heading="Contact" items={contactItems} />
-              </div>
-            </div>
-
-            {/* Divider */}
-            <div className="w-full border-t border-gray-200" />
-
-            {/* Bottom bar */}
-            <div className="flex flex-col gap-3 pb-4 md:pb-6 md:flex-row md:items-center md:justify-between">
-              <p className="text-gray-500 text-sm md:text-base">
-                ©{new Date().getFullYear()} Baraka Medicals. Made with{' '}
-                <Heart className="inline-block w-4 h-4 text-accent-500 fill-accent-500" />{' '}
-                for better healthcare.
+          <div>
+            <div className="flex flex-col gap-4 text-sm">
+              <a
+                href="mailto:info@barakamedicals.com"
+                className="flex items-center gap-2.5 transition-colors hover:text-slate-500"
+              >
+                <Mail className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
+                info@barakamedicals.com
+              </a>
+              <p className="flex items-center gap-2.5 text-slate-500">
+                <MapPin className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
+                Doha, Qatar
               </p>
-              <div className="flex gap-4 items-center">
-                <Link
-                  to="/privacy"
-                  className="border border-gray-200 rounded-full px-4 py-2 text-gray-600 text-xs md:text-sm font-medium hover:border-brand-300 transition-colors"
-                >
-                  Privacy Policy
-                </Link>
-                <Link
-                  to="/terms"
-                  className="border border-gray-200 rounded-full px-4 py-2 text-gray-600 text-xs md:text-sm font-medium hover:border-brand-300 transition-colors"
-                >
-                  Terms
-                </Link>
-              </div>
+              <Link to="/contact" className="group inline-flex items-center gap-2 font-medium">
+                Send an enquiry
+                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+              </Link>
             </div>
           </div>
         </div>
-      </footer>
 
-      {/* Floating Action Buttons */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
-        <a
-          href="tel:+974XXXXXXXX"
-          className="flex items-center justify-center w-12 h-12 rounded-full bg-brand-600 text-white shadow-md transition-colors hover:bg-brand-700"
-          aria-label="Call Us"
-        >
-          <Phone className="h-6 w-6" />
-        </a>
-        <a
-          href="https://wa.me/974XXXXXXXX"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center w-12 h-12 rounded-full bg-[#25D366] text-white shadow-md transition-opacity hover:opacity-90"
-          aria-label="Chat on WhatsApp"
-        >
-          <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.663-2.06-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-          </svg>
-        </a>
+        <div className="flex flex-col gap-3 pt-6 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} Baraka Medical Devices.</p>
+          <p>Medical supply with clarity and care.</p>
+        </div>
       </div>
-    </>
+    </footer>
   );
 };
 
