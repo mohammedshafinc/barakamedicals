@@ -9,7 +9,6 @@ import {
   MapPin,
   PackageCheck,
   ShieldCheck,
-  Sparkles,
   Stethoscope,
   Truck,
 } from 'lucide-react';
