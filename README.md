@@ -9,7 +9,7 @@ A modern, minimal website for Baraka Medicals - a medical devices company based 
 - 📞 **Contact Page** - Contact form and information
 - 🎨 **Red & White Theme** - Clean, professional medical theme
 - 📱 **Responsive Design** - Works on all devices
-- ⚡ **Fast Performance** - Built with React and Vite
+- ⚡ **Fast Performance** - Buildt with React and Vite
 
 ## Tech Stack
 
