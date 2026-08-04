@@ -262,10 +262,7 @@ const Home = () => {
 
       <section className="px-5 py-28 text-center sm:px-8 sm:py-36">
         <div className="mx-auto max-w-3xl">
-          <span className="mx-auto grid h-12 w-12 place-items-center rounded-full border border-slate-300">
-            <Sparkles className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
-          </span>
-          <h2 className="mt-7 font-serif text-4xl leading-[1.08] tracking-[-0.035em] sm:text-6xl">
+          <h2 className="font-serif text-4xl leading-[1.08] tracking-[-0.035em] sm:text-6xl">
             Medical equipment that keeps care moving.
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-7 text-slate-600">
