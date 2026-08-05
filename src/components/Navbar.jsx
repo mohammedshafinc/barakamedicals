@@ -3,6 +3,7 @@ import { ArrowRight, Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const navigation = [
+  { label: 'Home', to: '/' },
   { label: 'Products', to: '/#products' },
   { label: 'Why Baraka', to: '/#why-baraka' },
   { label: 'How it works', to: '/#process' },

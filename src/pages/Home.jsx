@@ -43,6 +43,51 @@ const products = [
   },
 ];
 
+const specialities = [
+  {
+    title: 'Rehabilitation',
+    description: 'Practical equipment and support solutions that help patients regain mobility, strength and independence.',
+    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=85',
+    alt: 'Healthcare professional supporting a patient during rehabilitation.',
+    position: 'center',
+  },
+  {
+    title: 'ENT & Audiology',
+    description: 'Specialized diagnostic and treatment solutions for ear, nose, throat and hearing care.',
+    image: 'https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?auto=format&fit=crop&w=1200&q=80',
+    alt: 'ENT and audiology diagnostic equipment',
+    position: 'center center',
+  },
+  {
+    title: 'Healthcare IT',
+    description: 'Connected digital solutions that help care teams manage information and make informed decisions.',
+    image: '/hero.png',
+    alt: 'Medical team reviewing digital healthcare information.',
+    position: 'right center',
+  },
+  {
+    title: 'AI & Robotics',
+    description: 'Intelligent technologies that support precision, automation and the next generation of patient care.',
+    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=85',
+    alt: 'Advanced robotic technology in a modern clinical environment.',
+    position: 'center',
+  },
+  {
+    title: 'General Consumables',
+    description: 'Essential day-to-day medical supplies backed by dependable availability and responsive service.',
+    image: '/hero2.png',
+    alt: 'Medical consumables and clinical equipment prepared for use.',
+    position: 'right center',
+  },
+  {
+    title: 'Biomedical Engineering',
+    description: 'Technical expertise for medical equipment planning, integration, maintenance and lifecycle support.',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85',
+    alt: 'Engineer working with advanced biomedical electronics.',
+    position: 'center',
+  },
+];
+
 const processSteps = [
   {
     number: '01',
@@ -268,6 +313,57 @@ const Home = () => {
             We pair quality-focused products with practical guidance and responsive service, so
             your team can stay focused on patients.
           </p>
+        </div>
+      </section>
+
+      <section
+        id="specialities"
+        className="scroll-mt-28 px-5 pb-28 sm:px-8 sm:pb-40"
+        aria-labelledby="specialities-heading"
+      >
+        <div className="mx-auto max-w-[1280px]">
+          <div className="max-w-5xl">
+            <h2
+              id="specialities-heading"
+              className="font-sans text-[12px] font-medium uppercase tracking-[0.48em] text-[#b67a32]"
+            >
+              Our Specialities
+            </h2>
+            <p className="mt-7 max-w-5xl text-[15px] leading-7 text-slate-600 sm:text-base">
+              Our focused solutions bring together dependable medical technology, practical
+              expertise and responsive support. From rehabilitation and laboratory systems to
+              connected care and biomedical engineering, we help healthcare teams improve
+              operations and deliver better patient outcomes.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
+            {specialities.map(({ title, description, image, alt, position }) => (
+              <article
+                key={title}
+                className="group relative isolate min-h-[280px] overflow-hidden rounded-[1.25rem] bg-slate-900 sm:aspect-[4/3] sm:min-h-0"
+              >
+                <img
+                  src={image}
+                  alt={alt}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                  style={{ objectPosition: position }}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div
+                  className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.04)_20%,rgba(15,23,42,0.30)_58%,rgba(15,23,42,0.92)_100%)]"
+                  aria-hidden="true"
+                />
+                <div className="absolute inset-x-0 bottom-0 p-6 text-white sm:p-7">
+                  <h3 className="font-sans text-xl font-medium tracking-[-0.02em]">{title}</h3>
+                  <p className="mt-2 line-clamp-2 text-[13px] leading-5 text-white/75">
+                    {description}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
