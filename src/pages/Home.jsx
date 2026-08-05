@@ -47,14 +47,14 @@ const specialities = [
   {
     title: 'Rehabilitation',
     description: 'Practical equipment and support solutions that help patients regain mobility, strength and independence.',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=85',
+    image: '/rehab.jpg',
     alt: 'Healthcare professional supporting a patient during rehabilitation.',
     position: 'center',
   },
   {
     title: 'ENT & Audiology',
     description: 'Specialized diagnostic and treatment solutions for ear, nose, throat and hearing care.',
-    image: 'https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?auto=format&fit=crop&w=1200&q=80',
+    image: '/ent.jpg',
     alt: 'ENT and audiology diagnostic equipment',
     position: 'center center',
   },
@@ -75,14 +75,14 @@ const specialities = [
   {
     title: 'General Consumables',
     description: 'Essential day-to-day medical supplies backed by dependable availability and responsive service.',
-    image: '/hero2.png',
+    image: '/consumabkes.jpg',
     alt: 'Medical consumables and clinical equipment prepared for use.',
     position: 'right center',
   },
   {
     title: 'Biomedical Engineering',
     description: 'Technical expertise for medical equipment planning, integration, maintenance and lifecycle support.',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85',
+    image: 'bio.jpg',
     alt: 'Engineer working with advanced biomedical electronics.',
     position: 'center',
   },
