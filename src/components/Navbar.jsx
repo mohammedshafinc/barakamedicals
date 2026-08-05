@@ -63,15 +63,25 @@ const Navbar = () => {
             </Link>
 
             <div className="hidden items-center gap-5 lg:flex xl:gap-7">
-              {navigation.map(({ label, to }) => (
-                <a
-                  key={label}
-                  href={to}
-                  className="text-sm font-normal text-slate-600 transition-colors hover:text-slate-950"
-                >
-                  {label}
-                </a>
-              ))}
+              {navigation.map(({ label, to }) =>
+                to.includes('#') ? (
+                  <a
+                    key={label}
+                    href={to}
+                    className="text-sm font-normal text-slate-600 transition-colors hover:text-slate-950"
+                  >
+                    {label}
+                  </a>
+                ) : (
+                  <Link
+                    key={label}
+                    to={to}
+                    className="text-sm font-normal text-slate-600 transition-colors hover:text-slate-950"
+                  >
+                    {label}
+                  </Link>
+                ),
+              )}
             </div>
 
             <Link
@@ -108,16 +118,27 @@ const Navbar = () => {
               aria-label="Mobile navigation"
             >
               <div className="space-y-1">
-                {navigation.map(({ label, to }) => (
-                  <a
-                    key={label}
-                    href={to}
-                    onClick={closeMenu}
-                    className="flex items-center justify-between rounded-xl px-4 py-3 text-[14px] font-normal transition-colors hover:bg-white/55"
-                  >
-                    {label}
-                  </a>
-                ))}
+                {navigation.map(({ label, to }) =>
+                  to.includes('#') ? (
+                    <a
+                      key={label}
+                      href={to}
+                      onClick={closeMenu}
+                      className="flex items-center justify-between rounded-xl px-4 py-3 text-[14px] font-normal transition-colors hover:bg-white/55"
+                    >
+                      {label}
+                    </a>
+                  ) : (
+                    <Link
+                      key={label}
+                      to={to}
+                      onClick={closeMenu}
+                      className="flex items-center justify-between rounded-xl px-4 py-3 text-[14px] font-normal transition-colors hover:bg-white/55"
+                    >
+                      {label}
+                    </Link>
+                  ),
+                )}
               </div>
               <Link
                 to="/contact"
