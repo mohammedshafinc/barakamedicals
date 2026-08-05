@@ -321,48 +321,133 @@ const Home = () => {
         className="scroll-mt-28 px-5 pb-28 sm:px-8 sm:pb-40"
         aria-labelledby="specialities-heading"
       >
-        <div className="mx-auto max-w-[1280px]">
-          <div className="max-w-5xl">
-            <h2
-              id="specialities-heading"
-              className="font-sans text-[12px] font-medium uppercase tracking-[0.48em] text-[#b67a32]"
-            >
-              Our Specialities
-            </h2>
-            <p className="mt-7 max-w-5xl text-[15px] leading-7 text-slate-600 sm:text-base">
-              Our focused solutions bring together dependable medical technology, practical
-              expertise and responsive support. From rehabilitation and laboratory systems to
-              connected care and biomedical engineering, we help healthcare teams improve
-              operations and deliver better patient outcomes.
-            </p>
+        <div className="mx-auto max-w-[1180px]">
+          <div className="grid gap-8 border-b border-slate-900/15 pb-10 lg:grid-cols-[0.7fr_1.3fr] lg:items-end lg:gap-16 lg:pb-12">
+            <div>
+              <p className="text-[11px] font-medium uppercase tracking-[0.42em] text-[#b67a32]">
+                Focused capabilities
+              </p>
+              <p className="mt-4 max-w-xs text-sm leading-6 text-slate-500">
+                Medical technology and technical support shaped around the needs of your facility.
+              </p>
+            </div>
+            <div>
+              <h2
+                id="specialities-heading"
+                className="max-w-3xl font-serif text-4xl leading-[1.04] tracking-[-0.04em] text-slate-950 sm:text-5xl lg:text-[3.5rem]"
+              >
+                Specialist solutions for every stage of care.
+              </h2>
+              <p className="mt-5 max-w-2xl text-[15px] leading-7 text-slate-600">
+                From rehabilitation and connected care to intelligent systems and biomedical
+                engineering, we bring dependable products and practical expertise together.
+              </p>
+            </div>
           </div>
 
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
-            {specialities.map(({ title, description, image, alt, position }) => (
+          <div className="mt-5 grid gap-5 lg:grid-cols-12">
+            {specialities.slice(0, 2).map(({ title, description, image, alt, position }, index) => (
               <article
                 key={title}
-                className="group relative isolate min-h-[280px] overflow-hidden rounded-[1.25rem] bg-slate-900 sm:aspect-[4/3] sm:min-h-0"
+                className={`group relative isolate min-h-[390px] overflow-hidden rounded-[2rem] bg-slate-900 sm:min-h-[460px] ${
+                  index === 0 ? 'lg:col-span-7' : 'lg:col-span-5'
+                }`}
               >
                 <img
                   src={image}
                   alt={alt}
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035]"
                   style={{ objectPosition: position }}
                   loading="lazy"
                   decoding="async"
                 />
                 <div
-                  className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.04)_20%,rgba(15,23,42,0.30)_58%,rgba(15,23,42,0.92)_100%)]"
+                  className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,22,27,0.10)_0%,rgba(10,22,27,0.14)_35%,rgba(10,22,27,0.92)_100%)]"
                   aria-hidden="true"
                 />
-                <div className="absolute inset-x-0 bottom-0 p-6 text-white sm:p-7">
-                  <h3 className="font-sans text-xl font-medium tracking-[-0.02em]">{title}</h3>
-                  <p className="mt-2 line-clamp-2 text-[13px] leading-5 text-white/75">
+                <div className="absolute inset-x-0 top-0 flex items-center justify-between p-6 text-white sm:p-8">
+                  <span className="text-[10px] font-medium uppercase tracking-[0.34em] text-white/70">
+                    Core speciality
+                  </span>
+                  <span className="border border-white/35 px-2.5 py-1.5 text-[10px] font-medium text-white/80">
+                    0{index + 1}
+                  </span>
+                </div>
+                <div className="absolute inset-x-0 bottom-0 p-6 text-white sm:p-8">
+                  <h3 className="max-w-md font-serif text-3xl leading-tight tracking-[-0.03em] sm:text-4xl">
+                    {title}
+                  </h3>
+                  <p className="mt-3 max-w-md text-[13px] leading-6 text-white/75 sm:text-sm">
                     {description}
                   </p>
+                  <Link
+                    to="/contact"
+                    className="group/link mt-5 inline-flex items-center gap-2 text-[12px] font-medium text-white"
+                    aria-label={`Discuss ${title} requirements`}
+                  >
+                    Discuss your requirements
+                    <ArrowRight
+                      className="h-3.5 w-3.5 transition-transform group-hover/link:translate-x-1"
+                      aria-hidden="true"
+                    />
+                  </Link>
                 </div>
               </article>
             ))}
+          </div>
+
+          <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {specialities.slice(2).map(({ title, description, image, alt, position }, index) => {
+              const SpecialtyIcon = [Boxes, Activity, PackageCheck, Stethoscope][index];
+              const cardTone = ['bg-[#dce7e9]', 'bg-[#e5ebe2]', 'bg-[#eadfd4]', 'bg-[#e9e5d9]'][index];
+
+              return (
+                <article
+                  key={title}
+                  className={`group flex min-h-[440px] flex-col overflow-hidden rounded-[2rem] border border-slate-900/5 ${cardTone}`}
+                >
+                  <div className="relative h-44 shrink-0 overflow-hidden bg-slate-800">
+                    <img
+                      src={image}
+                      alt={alt}
+                      className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                      style={{ objectPosition: position }}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <div
+                      className="absolute inset-0 bg-gradient-to-t from-slate-950/35 via-transparent to-slate-950/10"
+                      aria-hidden="true"
+                    />
+                    <span className="absolute right-4 top-4 border border-white/40 bg-slate-950/15 px-2.5 py-1.5 text-[10px] font-medium tracking-[0.18em] text-white backdrop-blur-sm">
+                      0{index + 3}
+                    </span>
+                  </div>
+                  <div className="flex flex-1 flex-col p-6 sm:p-7">
+                    <span className="grid h-10 w-10 place-items-center border border-slate-900/15 text-slate-700">
+                      <SpecialtyIcon className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
+                    </span>
+                    <div className="mt-8">
+                      <h3 className="font-serif text-2xl leading-tight tracking-[-0.025em] text-slate-950">
+                        {title}
+                      </h3>
+                      <p className="mt-3 text-[13px] leading-6 text-slate-600">{description}</p>
+                    </div>
+                    <Link
+                      to="/contact"
+                      className="group/link mt-auto inline-flex items-center gap-2 pt-5 text-[12px] font-medium text-slate-900"
+                      aria-label={`Discuss ${title} requirements`}
+                    >
+                      Explore solutions
+                      <ArrowRight
+                        className="h-3.5 w-3.5 transition-transform group-hover/link:translate-x-1"
+                        aria-hidden="true"
+                      />
+                    </Link>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
