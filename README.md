@@ -14,7 +14,7 @@ A modern, minimal website for Baraka Medicals - a medical devices company based 
 ## Tech Stack
 
 - React 18
-- Vite
+- Vites
 - React Router DOM
 - Tailwind CSS
 - Lucide React (Icons)
