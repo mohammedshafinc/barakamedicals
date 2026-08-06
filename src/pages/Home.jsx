@@ -17,73 +17,72 @@ import { Link } from 'react-router-dom';
 
 const products = [
   {
-    id: 'diagnostics',
-    title: 'Clarity for every decision.',
+    id: 'digital-care-platforms',
+    title: 'Connected care, designed around people.',
     description:
-      'Reliable diagnostic instruments selected to help clinical teams assess with confidence and work without unnecessary delays.',
-    image: '/hero2.png',
-    alt: 'Medical diagnostic and monitoring equipment in a bright clinical setting.',
+      'Patient portals, EMR workflows and engagement platforms that make access, communication and coordinated care simpler.',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=85',
+    alt: 'Healthcare software dashboard displaying connected care insights.',
   },
   {
-    id: 'monitoring',
-    title: 'Stay informed at every moment.',
+    id: 'cloud-cybersecurity',
+    title: 'A secure foundation for every service.',
     description:
-      'Dependable monitoring solutions for continuous care, with practical guidance to help your team choose the right configuration.',
-    image: '/hero.png',
-    alt: 'Clinician reviewing healthcare information on a tablet.',
+      'Resilient cloud architecture, identity controls and cybersecurity programs built to protect healthcare operations and sensitive data.',
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=85',
+    alt: 'Secure cloud infrastructure in a modern data center.',
   },
   {
-    id: 'consumables',
-    title: 'Everyday essentials, always ready.',
+    id: 'data-interoperability',
+    title: 'Turn connected data into better decisions.',
     description:
-      'Consistent access to the items your teams use every day, supported by responsive communication and straightforward ordering.',
-    image:
-      'https://cdn.sceneai.art/Hero%20Section%20Video/802fa01f-44ef-4ab4-ac73-62015fe06eef.png',
-    alt: 'Healthcare professional working in a modern clinical environment.',
+      'Standards-based integrations, analytics and information flows that connect clinical, operational and patient-facing systems.',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=85',
+    alt: 'Analytics interface visualizing integrated healthcare data.',
   },
 ];
 
 const specialities = [
   {
-    title: 'Rehabilitation',
-    description: 'Practical equipment and support solutions that help patients regain mobility, strength and independence.',
-    image: '/rehab.jpg',
-    alt: 'Healthcare professional supporting a patient during rehabilitation.',
+    title: 'Medical IT',
+    description: 'Secure, reliable technology foundations designed around clinical operations, compliance and patient care.',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=85',
+    alt: 'Digital analytics dashboard displayed on a computer screen.',
     position: 'center',
-  },
-  {
-    title: 'ENT & Audiology',
-    description: 'Specialized diagnostic and treatment solutions for ear, nose, throat and hearing care.',
-    image: '/ent.jpg',
-    alt: 'ENT and audiology diagnostic equipment',
-    position: 'center center',
   },
   {
     title: 'Healthcare IT',
-    description: 'Connected digital solutions that help care teams manage information and make informed decisions.',
+    description: 'Connected digital platforms that streamline information sharing and support coordinated care teams.',
     image: '/hero.png',
-    alt: 'Medical team reviewing digital healthcare information.',
+    alt: 'Healthcare team reviewing digital information on a tablet.',
     position: 'right center',
   },
   {
-    title: 'AI & Robotics',
-    description: 'Intelligent technologies that support precision, automation and the next generation of patient care.',
-    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=85',
-    alt: 'Advanced robotic technology in a modern clinical environment.',
+    title: 'Healthcare CRM',
+    description: 'Patient relationship tools for managing enquiries, engagement, communications and service journeys.',
+    image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85',
+    alt: 'Team collaborating around a digital customer relationship platform.',
     position: 'center',
   },
   {
-    title: 'General Consumables',
-    description: 'Essential day-to-day medical supplies backed by dependable availability and responsive service.',
-    image: '/consumabkes.jpg',
-    alt: 'Medical consumables and clinical equipment prepared for use.',
-    position: 'right center',
+    title: 'Healthcare ERP',
+    description: 'Integrated systems for finance, operations, workforce, resource planning and performance management.',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=85',
+    alt: 'Business intelligence dashboard showing operational data.',
+    position: 'center',
   },
   {
-    title: 'Biomedical Engineering',
-    description: 'Technical expertise for medical equipment planning, integration, maintenance and lifecycle support.',
-    image: 'bio.jpg',
-    alt: 'Engineer working with advanced biomedical electronics.',
+    title: 'Electronic Medical Records',
+    description: 'Structured, accessible clinical records that improve documentation, continuity and informed decisions.',
+    image: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1200&q=85',
+    alt: 'Healthcare professional working with digital clinical records.',
+    position: 'center',
+  },
+  {
+    title: 'Data & System Integration',
+    description: 'Interoperability, analytics and connected workflows that bring healthcare systems and data together.',
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=85',
+    alt: 'Secure server infrastructure supporting connected digital systems.',
     position: 'center',
   },
 ];
@@ -91,44 +90,44 @@ const specialities = [
 const processSteps = [
   {
     number: '01',
-    title: 'Tell us what you need',
-    description: 'Share your requirements, quantities and preferred timeline with our team.',
+    title: 'Discover the opportunity',
+    description: 'We map your goals, users, current systems, risks and measures of success.',
     icon: Mail,
   },
   {
     number: '02',
-    title: 'Review suitable options',
-    description: 'We identify appropriate products and provide clear availability and pricing.',
+    title: 'Design the right solution',
+    description: 'Together, we define the architecture, roadmap and implementation priorities.',
     icon: Stethoscope,
   },
   {
     number: '03',
-    title: 'Confirm and receive',
-    description: 'Once approved, we coordinate supply and keep you informed through delivery.',
+    title: 'Implement and support',
+    description: 'We deliver, integrate and optimize your platform with responsive local support.',
     icon: Truck,
   },
 ];
 
 const faqs = [
   {
-    question: 'What types of medical products do you supply?',
+    question: 'Which Healthcare IT solutions do you provide?',
     answer:
-      'Our focus includes diagnostic equipment, patient monitoring solutions, surgical instruments and frequently used medical consumables for hospitals, clinics, laboratories and pharmacies.',
+      'We support Healthcare IT strategy, CRM, ERP, EMR, patient engagement, cloud, cybersecurity, analytics and standards-based system integration.',
   },
   {
-    question: 'Can you help us select the right equipment?',
+    question: 'Can you work with our existing systems?',
     answer:
-      'Yes. Share your clinical setting and requirements, and our team will help narrow down suitable options before you make a purchasing decision.',
+      'Yes. We begin by understanding your current applications, infrastructure and workflows, then design an integration or modernization path that protects continuity.',
   },
   {
-    question: 'Do you serve facilities across Qatar?',
+    question: 'Do you support healthcare organizations across Qatar?',
     answer:
-      'Baraka Medical Devices is based in Doha and supports healthcare facilities across Qatar. Contact us with your location and requirements so we can confirm service details.',
+      'Baraka Medical Devices is based in Doha and supports healthcare organizations across Qatar with discovery, implementation and ongoing technical support.',
   },
   {
-    question: 'How do I request pricing and availability?',
+    question: 'How do we start a Healthcare IT project?',
     answer:
-      'Use the request-a-quote button or contact our team directly. Include the product, quantity and desired timeline where possible for a faster response.',
+      'Book a consultation and share your goals, current environment and preferred timeline. We will arrange a discovery conversation and recommend practical next steps.',
   },
 ];
 
@@ -168,19 +167,19 @@ function ArrowLink({ children, to, light = false }) {
 }
 
 function ProductPanel({ id }) {
-  if (id === 'diagnostics') {
+  if (id === 'digital-care-platforms') {
     return (
       <div className="absolute left-1/2 top-1/2 w-[78%] max-w-sm -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-white/70 bg-white/95 p-4 shadow-[0_24px_70px_-24px_rgba(15,23,42,0.55)] backdrop-blur sm:p-5">
         <div className="flex items-center justify-between gap-4">
           <div>
-            <p className="text-sm font-medium text-slate-900">Diagnostic requirement</p>
+            <p className="text-sm font-medium text-slate-900">Digital care journey</p>
           </div>
           <span className="grid h-8 w-8 place-items-center rounded-full bg-[#e9f0e4] text-[#476042]">
             <Stethoscope className="h-4 w-4" aria-hidden="true" />
           </span>
         </div>
         <div className="mt-4 grid grid-cols-3 gap-2 text-[10px] text-slate-500">
-          {['Facility', 'Quantity', 'Timeline'].map((label) => (
+          {['Patient portal', 'EMR workflow', 'Engagement'].map((label) => (
             <div key={label} className="rounded-lg bg-[#f4f1e9] px-2.5 py-2.5">
               {label}
             </div>
@@ -190,14 +189,14 @@ function ProductPanel({ id }) {
     );
   }
 
-  if (id === 'monitoring') {
+  if (id === 'cloud-cybersecurity') {
     return (
       <div className="absolute left-1/2 top-1/2 w-[78%] max-w-sm -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-white/70 bg-white/95 p-4 shadow-[0_24px_70px_-24px_rgba(15,23,42,0.55)] backdrop-blur sm:p-5">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm font-medium text-slate-900">Configuration overview</p>
+            <p className="text-sm font-medium text-slate-900">Secure cloud operations</p>
           </div>
-          <Activity className="h-5 w-5 text-[#527c78]" aria-hidden="true" />
+          <ShieldCheck className="h-5 w-5 text-[#527c78]" aria-hidden="true" />
         </div>
         <svg className="mt-4 h-14 w-full" viewBox="0 0 320 56" fill="none" aria-hidden="true">
           <path d="M0 35h47l12-19 18 33 16-25 13 11h44l14-20 18 34 17-24 12 10h109" stroke="#6d9690" strokeWidth="2" />
@@ -211,17 +210,17 @@ function ProductPanel({ id }) {
     <div className="absolute left-1/2 top-1/2 w-[78%] max-w-sm -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-white/70 bg-white/95 p-4 shadow-[0_24px_70px_-24px_rgba(15,23,42,0.55)] backdrop-blur sm:p-5">
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-sm font-medium text-slate-900">Everyday essentials</p>
+          <p className="text-sm font-medium text-slate-900">Interoperability hub</p>
         </div>
         <Boxes className="h-5 w-5 text-[#976c54]" aria-hidden="true" />
       </div>
       <div className="mt-4 space-y-2">
-        {['Consumables', 'Clinical essentials', 'Facility supplies'].map((label, index) => (
+        {['Clinical systems', 'Operational data', 'Patient services'].map((label, index) => (
           <div key={label} className="flex items-center justify-between rounded-lg bg-[#f4f1e9] px-3 py-2 text-[10px] text-slate-600">
             <span>{label}</span>
             <span className="flex items-center gap-1 text-[#527c5c]">
               <Check className="h-3 w-3" aria-hidden="true" />
-              {index === 0 ? 'Requested' : 'Available'}
+              {index === 0 ? 'Connected' : 'Synchronized'}
             </span>
           </div>
         ))}
@@ -256,7 +255,7 @@ function ProductFeature({ product, reverse }) {
           to="/contact"
           className="group mt-6 inline-flex items-center gap-2 text-[13px] font-medium text-slate-950"
         >
-          Discuss your requirements
+          Discuss your project
           <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
         </Link>
       </div>
@@ -278,21 +277,21 @@ const Home = () => {
           <div className="mx-auto max-w-[36rem] text-center">
             <h1
               className="font-serif text-[46px] font-normal leading-[0.98] tracking-[-0.045em] sm:text-[64px] lg:text-[76px]"
-              aria-label="Equipping better care, every day"
+              aria-label="Healthcare IT that moves care forward"
             >
               <span className="block sm:whitespace-nowrap">
-                <AnimatedLine text="Equipping better" startDelay={180} />
+                <AnimatedLine text="Healthcare IT that" startDelay={180} />
               </span>
               <span className="block sm:whitespace-nowrap">
-                <AnimatedLine text="care, every day." startDelay={430} />
+                <AnimatedLine text="moves care forward." startDelay={430} />
               </span>
             </h1>
             <p className="mx-auto mt-6 max-w-md text-[15px] leading-7 text-white/75 sm:text-base">
-              Medical devices, monitoring solutions and consumables for hospitals, clinics,
-              laboratories and pharmacies across Qatar.
+              Strategy, platforms, cloud, cybersecurity and integration for healthcare organizations
+              across Qatar.
             </p>
             <div className="mt-7 flex flex-wrap justify-center gap-3">
-              <ArrowLink to="/contact" light>Request a quote</ArrowLink>
+              <ArrowLink to="/contact" light>Book a consultation</ArrowLink>
               <Link
                 to="/about"
                 className="inline-flex items-center rounded-full border border-white/40 bg-white/5 px-5 py-3 text-[13px] font-medium text-white backdrop-blur transition-colors hover:bg-white/15"
@@ -307,11 +306,11 @@ const Home = () => {
       <section className="px-5 py-28 text-center sm:px-8 sm:py-36">
         <div className="mx-auto max-w-3xl">
           <h2 className="font-serif text-4xl leading-[1.08] tracking-[-0.035em] sm:text-6xl">
-            Medical equipment that keeps care moving.
+            Digital foundations for connected, resilient care.
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-7 text-slate-600">
-            We pair quality-focused products with practical guidance and responsive service, so
-            your team can stay focused on patients.
+            We align technology with clinical and operational priorities, then implement and support
+            systems that help your teams work securely and confidently.
           </p>
         </div>
       </section>
@@ -328,7 +327,7 @@ const Home = () => {
                 Focused capabilities
               </p>
               <p className="mt-4 max-w-xs text-sm leading-6 text-slate-500">
-                Medical technology and technical support shaped around the needs of your facility.
+                Healthcare software and connected systems shaped around the needs of your organization.
               </p>
             </div>
             <div>
@@ -336,11 +335,11 @@ const Home = () => {
                 id="specialities-heading"
                 className="max-w-3xl font-serif text-4xl leading-[1.04] tracking-[-0.04em] text-slate-950 sm:text-5xl lg:text-[3.5rem]"
               >
-                Specialist solutions for every stage of care.
+                Digital solutions for smarter healthcare operations.
               </h2>
               <p className="mt-5 max-w-2xl text-[15px] leading-7 text-slate-600">
-                From rehabilitation and connected care to intelligent systems and biomedical
-                engineering, we bring dependable products and practical expertise together.
+                From Medical IT and patient engagement to CRM, ERP and interoperable data,
+                we build connected platforms that help healthcare organizations work better.
               </p>
             </div>
           </div>
@@ -385,7 +384,7 @@ const Home = () => {
                     className="group/link mt-5 inline-flex items-center gap-2 text-[12px] font-medium text-white"
                     aria-label={`Discuss ${title} requirements`}
                   >
-                    Discuss your requirements
+                    Discuss your project
                     <ArrowRight
                       className="h-3.5 w-3.5 transition-transform group-hover/link:translate-x-1"
                       aria-hidden="true"
@@ -452,7 +451,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section id="products" className="scroll-mt-28 px-5 pb-28 sm:px-8 sm:pb-40">
+      <section id="solutions" className="scroll-mt-28 px-5 pb-28 sm:px-8 sm:pb-40">
         <div className="mx-auto max-w-[1180px] space-y-28 sm:space-y-40">
           {products.map((product, index) => (
             <ProductFeature key={product.id} product={product} reverse={index % 2 === 1} />
@@ -464,32 +463,32 @@ const Home = () => {
         <div className="mx-auto max-w-[1180px]">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="font-serif text-4xl leading-[1.06] tracking-[-0.04em] sm:text-6xl">
-              A dependable partner for the products your team relies on.
+              A Healthcare IT partner from strategy through support.
             </h2>
           </div>
 
           <div className="mt-16 grid gap-4 md:grid-cols-3 md:items-stretch">
             <div className="rounded-[2rem] bg-[#b9cbb9] p-7 md:mt-16">
               <ShieldCheck className="h-6 w-6" strokeWidth={1.5} aria-hidden="true" />
-              <h3 className="mt-16 font-serif text-2xl">Recognized standards</h3>
+              <h3 className="mt-16 font-serif text-2xl">Healthcare-aware delivery</h3>
               <p className="mt-3 text-sm leading-6 text-slate-700">
-                Quality and safety guide how products are selected.
+                Clinical context, security and interoperability guide every engagement.
               </p>
             </div>
 
             <div className="relative min-h-[420px] overflow-hidden rounded-[2rem] bg-slate-900">
-              <img src="/hero2.png" alt="Clinical equipment arranged in a modern medical setting." className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1400&q=85" alt="Secure infrastructure supporting connected healthcare services." className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-7 text-white">
-                <p className="font-serif text-3xl">Clear guidance from enquiry to delivery.</p>
+                <p className="font-serif text-3xl">Clear guidance from discovery to ongoing support.</p>
               </div>
             </div>
 
             <div className="rounded-[2rem] bg-[#d7c7b7] p-7 md:mt-10 md:mb-6">
               <Headphones className="h-6 w-6" strokeWidth={1.5} aria-hidden="true" />
-              <h3 className="mt-16 font-serif text-2xl">Responsive service</h3>
+              <h3 className="mt-16 font-serif text-2xl">Responsive partnership</h3>
               <p className="mt-3 text-sm leading-6 text-slate-700">
-                Straightforward communication and practical follow-through.
+                Practical collaboration and support long after implementation.
               </p>
             </div>
           </div>
@@ -500,13 +499,13 @@ const Home = () => {
         <div className="mx-auto grid max-w-[1180px] items-center gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <div className="max-w-md">
             <h2 className="font-serif text-4xl leading-[1.06] tracking-[-0.04em] sm:text-5xl">
-              Based in Doha. Ready to support your facility.
+              Based in Doha. Ready to advance your digital roadmap.
             </h2>
             <p className="mt-5 text-[15px] leading-7 text-slate-600">
-              Share your requirements and our team will respond with suitable options, clear
-              pricing and current availability.
+              Bring us your goals and current technology landscape. Our team will shape a practical
+              path from discovery and architecture through implementation and support.
             </p>
-            <div className="mt-7"><ArrowLink to="/contact">Contact our team</ArrowLink></div>
+            <div className="mt-7"><ArrowLink to="/contact">Book a consultation</ArrowLink></div>
           </div>
 
           <div className="relative min-h-[480px] overflow-hidden rounded-[2.5rem] bg-[#dce7e9] p-6 sm:p-10">
@@ -525,9 +524,9 @@ const Home = () => {
               </div>
               <div className="my-5 h-px bg-slate-200" />
               <div className="space-y-3 text-sm text-slate-600">
-                <p className="flex items-center gap-2"><Check className="h-4 w-4 text-[#66816a]" /> Product guidance</p>
-                <p className="flex items-center gap-2"><Check className="h-4 w-4 text-[#66816a]" /> Availability updates</p>
-                <p className="flex items-center gap-2"><Check className="h-4 w-4 text-[#66816a]" /> Delivery coordination</p>
+                <p className="flex items-center gap-2"><Check className="h-4 w-4 text-[#66816a]" /> Strategic discovery</p>
+                <p className="flex items-center gap-2"><Check className="h-4 w-4 text-[#66816a]" /> Secure implementation</p>
+                <p className="flex items-center gap-2"><Check className="h-4 w-4 text-[#66816a]" /> Local ongoing support</p>
               </div>
             </div>
           </div>
@@ -537,7 +536,7 @@ const Home = () => {
       <section id="process" className="scroll-mt-28 bg-[#ebe4d9] px-5 py-28 sm:px-8 sm:py-36">
         <div className="mx-auto max-w-[1180px]">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="font-serif text-4xl tracking-[-0.04em] sm:text-6xl">Simple from the first conversation.</h2>
+            <h2 className="font-serif text-4xl tracking-[-0.04em] sm:text-6xl">A clear path from idea to impact.</h2>
           </div>
 
           <div className="mt-14 grid gap-4 md:grid-cols-3">
@@ -580,19 +579,19 @@ const Home = () => {
 
       <section className="px-4 pb-4 sm:px-6 sm:pb-6">
         <div className="relative mx-auto min-h-[560px] max-w-[1340px] overflow-hidden rounded-[2.5rem] bg-slate-950 sm:rounded-[3rem]">
-          <img src="/hero2.png" alt="Medical equipment prepared in a bright clinical environment." className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&q=85" alt="Healthcare technology team collaborating on a digital transformation project." className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
           <div className="absolute inset-0 bg-slate-950/55" />
           <div className="relative flex min-h-[560px] items-center justify-center px-5 py-20 text-center text-white">
             <div className="max-w-3xl">
               <PackageCheck className="mx-auto h-8 w-8" strokeWidth={1.3} aria-hidden="true" />
               <h2 className="mt-7 font-serif text-4xl leading-[1.02] tracking-[-0.045em] sm:text-6xl">
-                Let’s equip better care together.
+                Let’s build better-connected care.
               </h2>
               <p className="mx-auto mt-5 max-w-xl text-[15px] leading-7 text-white/70">
-                Tell us what your facility needs and we’ll come back with suitable options,
-                straightforward pricing and current availability.
+                Tell us where your organization wants to go. We’ll help define the right Healthcare IT
+                strategy, implementation roadmap and support model.
               </p>
-              <div className="mt-7"><ArrowLink to="/contact" light>Request a quote</ArrowLink></div>
+              <div className="mt-7"><ArrowLink to="/contact" light>Book a consultation</ArrowLink></div>
             </div>
           </div>
         </div>

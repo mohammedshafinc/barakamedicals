@@ -1,8 +1,8 @@
 /**
  * Baraka Medical Devices logo lockup.
  *
- * The asset already contains the "Baraka / Medical Devices" wordmark, so it is
- * rendered on its own rather than alongside a duplicate text label.
+ * The asset contains the complete company wordmark, so it is rendered on its
+ * own rather than alongside a duplicate text label.
  */
 const Logo = ({ className = 'h-14 w-auto' }) => (
   <img

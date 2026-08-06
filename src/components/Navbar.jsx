@@ -4,9 +4,9 @@ import { Link, useLocation } from 'react-router-dom';
 
 const navigation = [
   { label: 'Home', to: '/' },
-  { label: 'Products', to: '/#products' },
+  { label: 'Solutions', to: '/#solutions' },
   { label: 'Why Baraka', to: '/#why-baraka' },
-  { label: 'How it works', to: '/#process' },
+  { label: 'Our approach', to: '/#process' },
   { label: 'FAQ', to: '/#faq' },
   { label: 'About us', to: '/about' },
 ];
@@ -89,7 +89,7 @@ const Navbar = () => {
               to="/contact"
               className="group hidden items-center gap-2 rounded-full border border-[#315B50] bg-[#315B50] px-4 py-2.5 text-[12px] font-medium text-white transition-colors hover:bg-[#26483f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#315B50] lg:inline-flex"
             >
-              Request a quote
+              Book a consultation
               <ArrowRight
                 className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5"
                 aria-hidden="true"
@@ -146,7 +146,7 @@ const Navbar = () => {
                 onClick={closeMenu}
                 className="group mt-3 flex items-center justify-between rounded-xl bg-[#315B50] px-4 py-3 text-[13px] font-medium text-white transition-colors hover:bg-[#26483f]"
               >
-                Request a quote
+                Book a consultation
                 <ArrowRight
                   className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5"
                   aria-hidden="true"

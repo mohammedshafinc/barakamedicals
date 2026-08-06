@@ -11,36 +11,36 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const audiences = ['Hospitals', 'Clinics', 'Laboratories', 'Pharmacies', 'Healthcare professionals'];
+const audiences = ['Hospitals', 'Clinics', 'Health networks', 'Diagnostic centers', 'Healthcare teams'];
 
 const values = [
   {
-    title: 'Quality',
-    description: 'Products selected with safety, performance and recognized standards in mind.',
+    title: 'Healthcare insight',
+    description: 'Technology decisions grounded in clinical, operational and patient needs.',
     icon: Award,
     color: 'bg-[#b9cbb9]',
   },
   {
-    title: 'Integrity',
-    description: 'Honest communication, transparent guidance and professional conduct.',
+    title: 'Trust',
+    description: 'Clear advice, responsible implementation and security-conscious practices.',
     icon: ShieldCheck,
     color: 'bg-[#d8c8b8]',
   },
   {
-    title: 'Customer focus',
-    description: 'Your facility’s needs stay at the center of every recommendation we make.',
+    title: 'Partnership',
+    description: 'Your people and priorities remain central from discovery through support.',
     icon: Users,
     color: 'bg-[#cbd8d8]',
   },
   {
     title: 'Innovation',
-    description: 'We seek practical medical technologies that can improve healthcare delivery.',
+    description: 'Practical digital solutions that improve experience, insight and efficiency.',
     icon: Lightbulb,
     color: 'bg-[#ddd6b9]',
   },
   {
     title: 'Reliability',
-    description: 'Dependable products and responsive service our customers can plan around.',
+    description: 'Resilient systems, disciplined implementation and responsive local support.',
     icon: Check,
     color: 'bg-[#d4c7d3]',
   },
@@ -52,11 +52,11 @@ const About = () => {
       <section className="px-5 pb-16 pt-20 text-center sm:px-8 sm:pb-20 sm:pt-28">
         <div className="mx-auto max-w-4xl">
           <h1 className="font-serif text-5xl leading-[0.98] tracking-[-0.05em] sm:text-7xl lg:text-[88px]">
-            Better care starts with what teams can rely on.
+            Better care starts with technology teams can trust.
           </h1>
           <p className="mx-auto mt-7 max-w-2xl text-[15px] leading-7 text-slate-600 sm:text-base">
-            We help healthcare providers access dependable medical devices and practical support,
-            with every recommendation grounded in quality, clarity and care.
+            Baraka Medical Devices helps healthcare organizations plan, implement, integrate and
+            support secure digital systems that make care and operations work better.
           </p>
         </div>
       </section>
@@ -64,8 +64,8 @@ const About = () => {
       <section className="px-4 sm:px-6">
         <div className="relative mx-auto aspect-[16/8] min-h-[430px] max-w-[1340px] overflow-hidden rounded-[2.5rem] bg-slate-900 sm:rounded-[3rem]">
           <img
-            src="/hero2.png"
-            alt="Medical equipment arranged in a modern clinical setting overlooking Doha."
+            src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&q=85"
+            alt="Healthcare technology team collaborating on digital strategy in Doha."
             className="absolute inset-0 h-full w-full object-cover"
             fetchPriority="high"
             decoding="async"
@@ -75,7 +75,7 @@ const About = () => {
           <div className="absolute bottom-5 left-5 right-5 flex flex-col gap-4 sm:bottom-8 sm:left-8 sm:right-8 sm:flex-row sm:items-end sm:justify-between">
             <div className="max-w-lg text-white">
               <p className="font-serif text-3xl leading-tight sm:text-4xl">
-                Supporting the people who support patients.
+                Empowering the people who transform healthcare.
               </p>
             </div>
             <div className="flex items-center gap-3 self-start rounded-2xl border border-white/20 bg-white/90 px-4 py-3 text-slate-950 shadow-lg backdrop-blur sm:self-auto">
@@ -92,24 +92,22 @@ const About = () => {
         <div className="mx-auto grid max-w-[1100px] gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
           <div>
             <h2 className="font-serif text-4xl leading-[1.06] tracking-[-0.04em] sm:text-5xl">
-              Healthcare solutions chosen with care.
+              Healthcare transformation built around your organization.
             </h2>
           </div>
 
           <div>
             <div className="space-y-6 text-[15px] leading-8 text-slate-600 sm:text-base">
               <p>
-                We partner with trusted manufacturers and suppliers to offer a carefully selected
-                range of medical devices that meet recognized quality and safety standards. From
-                diagnostic equipment and patient monitoring solutions to surgical instruments and
-                medical consumables, we strive to make dependable products accessible at competitive
-                prices.
+                We help healthcare organizations turn strategy into dependable digital capability.
+                Our work spans Healthcare IT roadmaps, patient and provider CRM, ERP, EMR,
+                interoperability, cloud platforms and cybersecurity—designed around real clinical
+                and operational workflows.
               </p>
               <p>
-                Our team understands the importance of timely service, technical expertise and
-                long-term customer relationships. We work closely with healthcare providers to
-                recommend suitable solutions and provide responsive support throughout the purchasing
-                process.
+                From discovery and solution architecture to implementation, integration, adoption
+                and ongoing support, our Doha-based team works collaboratively to reduce complexity,
+                strengthen resilience and create measurable value from technology.
               </p>
             </div>
 
@@ -132,7 +130,7 @@ const About = () => {
         <div className="mx-auto max-w-[1180px]">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="font-serif text-4xl leading-[1.06] tracking-[-0.04em] sm:text-6xl">
-              Purpose guides every product and partnership.
+              Purpose guides every solution and partnership.
             </h2>
           </div>
 
@@ -144,11 +142,10 @@ const About = () => {
                 </span>
               </div>
               <div className="mt-auto max-w-md">
-                <h3 className="font-serif text-4xl tracking-[-0.04em] sm:text-5xl">Equip professionals for better outcomes.</h3>
+                <h3 className="font-serif text-4xl tracking-[-0.04em] sm:text-5xl">Make healthcare technology work for people.</h3>
                 <p className="mt-5 text-sm leading-7 text-slate-600">
-                  To provide healthcare professionals with innovative, reliable and cost-effective
-                  medical devices that support excellence in healthcare and contribute to better
-                  patient outcomes.
+                  Our mission is to translate healthcare priorities into secure, connected and
+                  usable digital solutions that improve experiences, decisions and outcomes.
                 </p>
               </div>
             </article>
@@ -160,10 +157,10 @@ const About = () => {
                 </span>
               </div>
               <div className="mt-auto max-w-md">
-                <h3 className="font-serif text-4xl tracking-[-0.04em] sm:text-5xl">Become a partner healthcare can trust.</h3>
+                <h3 className="font-serif text-4xl tracking-[-0.04em] sm:text-5xl">A more connected, resilient healthcare future.</h3>
                 <p className="mt-5 text-sm leading-7 text-slate-700">
-                  To become a trusted leader in medical devices through exceptional products,
-                  thoughtful customer service and lasting partnerships with healthcare organizations.
+                  Our vision is to be Qatar’s trusted Healthcare IT partner, helping organizations
+                  connect systems, protect data and continuously improve digital care delivery.
                 </p>
               </div>
             </article>
@@ -204,8 +201,8 @@ const About = () => {
       <section className="px-4 pb-4 sm:px-6 sm:pb-6">
         <div className="relative mx-auto min-h-[560px] max-w-[1340px] overflow-hidden rounded-[2.5rem] bg-slate-950 sm:rounded-[3rem]">
           <img
-            src="/hero.png"
-            alt="Clinician reviewing healthcare information in a bright hospital environment."
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1800&q=85"
+            alt="Healthcare analytics platform supporting informed clinical and operational decisions."
             className="absolute inset-0 h-full w-full object-cover object-center"
             loading="lazy"
             decoding="async"
@@ -215,18 +212,17 @@ const About = () => {
             <div className="max-w-3xl">
               <ShieldCheck className="mx-auto h-8 w-8" strokeWidth={1.3} aria-hidden="true" />
               <h2 className="mt-7 font-serif text-4xl leading-[1.02] tracking-[-0.045em] sm:text-6xl">
-                Supporting better care, together.
+                Start your digital transformation.
               </h2>
               <p className="mx-auto mt-5 max-w-xl text-[15px] leading-7 text-white/70">
-                Quality medical technology plays a vital role in improving lives. We are here to
-                support healthcare professionals with products they can trust and service they can
-                rely on.
+                Whether you are modernizing an EMR, connecting systems, moving securely to cloud or
+                improving patient engagement, we can help you move from ambition to implementation.
               </p>
               <Link
                 to="/contact"
                 className="group mt-7 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-[13px] font-medium text-slate-950 transition-transform hover:-translate-y-0.5"
               >
-                Talk to our team
+                Book a consultation
                 <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
               </Link>
             </div>

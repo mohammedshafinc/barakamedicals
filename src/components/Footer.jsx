@@ -21,17 +21,17 @@ const Footer = () => {
               />
             </Link>
             <p className="mt-5 text-sm leading-7 text-slate-500">
-              Quality medical devices, monitoring solutions and consumables backed by practical
-              guidance and responsive support.
+              Healthcare IT strategy, platforms, integration, cloud and cybersecurity backed by
+              thoughtful implementation and responsive support.
             </p>
           </div>
 
           <div>
             <p className="text-[11px] uppercase tracking-[0.2em] text-slate-400">Explore</p>
             <nav className="mt-5 flex flex-col gap-3 text-sm" aria-label="Footer navigation">
-              <a href="/#products" className="transition-colors hover:text-slate-500">Products</a>
+              <a href="/#solutions" className="transition-colors hover:text-slate-500">Solutions</a>
               <a href="/#why-baraka" className="transition-colors hover:text-slate-500">Why Baraka</a>
-              <a href="/#process" className="transition-colors hover:text-slate-500">How it works</a>
+              <a href="/#process" className="transition-colors hover:text-slate-500">Our approach</a>
               <Link to="/about" className="transition-colors hover:text-slate-500">About us</Link>
               <Link to="/contact" className="transition-colors hover:text-slate-500">Contact</Link>
             </nav>
@@ -52,7 +52,7 @@ const Footer = () => {
                 Doha, Qatar
               </p>
               <Link to="/contact" className="group inline-flex items-center gap-2 font-medium">
-                Send an enquiry
+                Book a consultation
                 <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
               </Link>
             </div>
@@ -62,7 +62,7 @@ const Footer = () => {
 
       <div className="mx-auto flex max-w-[1180px] flex-col gap-3 border-b border-slate-200 py-6 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
         <p>© {new Date().getFullYear()} Baraka Medical Devices.</p>
-        <p>Medical supply with clarity and care.</p>
+        <p>Connected healthcare, delivered with clarity and care.</p>
       </div>
 
       <div className="mx-auto mt-8 w-full max-w-none sm:mt-10">

@@ -13,29 +13,29 @@ const contactMethods = [
   {
     label: 'Email us',
     value: 'info@barakamedicals.com',
-    detail: 'For general and product enquiries',
+    detail: 'For consultation and project enquiries',
     href: 'mailto:info@barakamedicals.com',
     icon: Mail,
   },
   {
     label: 'Call us',
     value: '+974 XXXX XXXX',
-    detail: 'Speak directly with our team',
+    detail: 'Speak directly with our Healthcare IT team',
     href: 'tel:+974XXXXXXXX',
     icon: Phone,
   },
   {
     label: 'Visit us',
     value: 'Doha, Qatar',
-    detail: 'Serving healthcare teams across Qatar',
+    detail: 'Supporting healthcare organizations across Qatar',
     icon: MapPin,
   },
 ];
 
 const inquiryChecklist = [
-  'The product or equipment category',
-  'Your preferred quantity or specification',
-  'When you need it delivered',
+  'Your business or care-delivery goal',
+  'Your current systems and key users',
+  'Your preferred timeline and priorities',
 ];
 
 const fieldClassName =
@@ -86,25 +86,25 @@ const Contact = () => {
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-20 lg:px-8 lg:py-24">
           <div>
             <h1 className="max-w-3xl text-4xl font-bold leading-[1.1] tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
-              Let’s find what your facility needs
+              Let’s shape your next Healthcare IT initiative
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-gray-600">
-              Whether you are sourcing everyday consumables or specialist equipment, our team will
-              help you identify suitable options with clear pricing and availability.
+              Share your goals, current technology landscape and challenges. Our team will help you
+              define a practical path from discovery to secure implementation and support.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-x-7 gap-y-3 text-sm font-medium text-gray-600">
               <span className="inline-flex items-center gap-2">
                 <CheckCircle2 className="h-4 w-4 text-brand-600" aria-hidden="true" />
-                Product guidance
+                Strategic discovery
               </span>
               <span className="inline-flex items-center gap-2">
                 <CheckCircle2 className="h-4 w-4 text-brand-600" aria-hidden="true" />
-                Clear quotations
+                Solution roadmap
               </span>
               <span className="inline-flex items-center gap-2">
                 <CheckCircle2 className="h-4 w-4 text-brand-600" aria-hidden="true" />
-                Local support
+                Doha-based support
               </span>
             </div>
           </div>
@@ -191,7 +191,7 @@ const Contact = () => {
                   <div>
                     <p className="font-bold">Based in Doha</p>
                     <p className="mt-1 text-sm leading-6 text-brand-100">
-                      Supporting hospitals, clinics, laboratories and pharmacies across Qatar.
+                      Supporting hospitals, clinics, health networks and care teams across Qatar.
                     </p>
                   </div>
                 </div>
@@ -252,7 +252,7 @@ const Contact = () => {
                       onChange={handleChange}
                       autoComplete="organization"
                       className={fieldClassName}
-                      placeholder="Hospital, clinic or company"
+                      placeholder="Hospital, clinic or healthcare organization"
                     />
                   </div>
                 </div>
@@ -305,12 +305,13 @@ const Contact = () => {
                     className={fieldClassName}
                   >
                     <option value="" disabled>
-                      Select an enquiry type
+                      Select a project type
                     </option>
-                    <option value="quote">Request a quotation</option>
-                    <option value="product">Product information</option>
-                    <option value="availability">Pricing and availability</option>
-                    <option value="partnership">Supplier or partnership enquiry</option>
+                    <option value="strategy">Healthcare IT strategy and discovery</option>
+                    <option value="crm-erp-emr">CRM, ERP or EMR implementation</option>
+                    <option value="integration">Data and system integration</option>
+                    <option value="cloud-security">Cloud and cybersecurity</option>
+                    <option value="support">Managed support and optimization</option>
                     <option value="other">Something else</option>
                   </select>
                 </div>
@@ -327,7 +328,7 @@ const Contact = () => {
                     required
                     rows="6"
                     className={`${fieldClassName} resize-y`}
-                    placeholder="Tell us about the products, quantities or specifications you need..."
+                    placeholder="Tell us about your goals, current systems, users, challenges and preferred timeline..."
                   />
                 </div>
 
