@@ -20,7 +20,7 @@ const contactMethods = [
   {
     label: 'Call us',
     value: '+974 XXXX XXXX',
-    detail: 'Speak directly with our Healthcare IT team',
+    detail: 'Speak directly with our technology team',
     href: 'tel:+974XXXXXXXX',
     icon: Phone,
   },
@@ -86,7 +86,7 @@ const Contact = () => {
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-20 lg:px-8 lg:py-24">
           <div>
             <h1 className="max-w-3xl text-4xl font-bold leading-[1.1] tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
-              Let’s shape your next Healthcare IT initiative
+              Let’s shape your next digital health initiative
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-gray-600">
               Share your goals, current technology landscape and challenges. Our team will help you
@@ -307,7 +307,7 @@ const Contact = () => {
                     <option value="" disabled>
                       Select a project type
                     </option>
-                    <option value="strategy">Healthcare IT strategy and discovery</option>
+                    <option value="strategy">Digital strategy and discovery</option>
                     <option value="crm-erp-emr">CRM, ERP or EMR implementation</option>
                     <option value="integration">Data and system integration</option>
                     <option value="cloud-security">Cloud and cybersecurity</option>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ArrowRight, Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import Logo from './Logo';
 
 const navigation = [
   { label: 'Home', to: '/' },
@@ -51,16 +52,10 @@ const Navbar = () => {
             <Link
               to="/"
               className="flex items-center text-slate-900 transition-opacity hover:opacity-65 focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-800"
-              aria-label="Baraka Medical Devices home"
+              aria-label="Baraka Medical Solutions home"
               onClick={closeMenu}
             >
-              <img
-                src="/logo/baraka-full.svg"
-                alt=""
-                className="h-9 w-auto sm:h-10"
-                width="725"
-                height="216"
-              />
+              <Logo className="h-9 w-auto sm:h-10" label={null} />
             </Link>
 
             <div className="hidden items-center gap-5 lg:flex xl:gap-7">

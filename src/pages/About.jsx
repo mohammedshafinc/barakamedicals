@@ -55,7 +55,7 @@ const About = () => {
             Better care starts with technology teams can trust.
           </h1>
           <p className="mx-auto mt-7 max-w-2xl text-[15px] leading-7 text-slate-600 sm:text-base">
-            Baraka Medical Devices helps healthcare organizations plan, implement, integrate and
+            Baraka Medical Solutions helps healthcare organizations plan, implement, integrate and
             support secure digital systems that make care and operations work better.
           </p>
         </div>
@@ -100,8 +100,8 @@ const About = () => {
             <div className="space-y-6 text-[15px] leading-8 text-slate-600 sm:text-base">
               <p>
                 We help healthcare organizations turn strategy into dependable digital capability.
-                Our work spans Healthcare IT roadmaps, patient and provider CRM, ERP, EMR,
-                interoperability, cloud platforms and cybersecurity—designed around real clinical
+                Our work spans technology roadmaps, patient and provider CRM, ERP, EMR,
+                interoperability, cloud platforms and cybersecurity, designed around real clinical
                 and operational workflows.
               </p>
               <p>
@@ -159,7 +159,7 @@ const About = () => {
               <div className="mt-auto max-w-md">
                 <h3 className="font-serif text-4xl tracking-[-0.04em] sm:text-5xl">A more connected, resilient healthcare future.</h3>
                 <p className="mt-5 text-sm leading-7 text-slate-700">
-                  Our vision is to be Qatar’s trusted Healthcare IT partner, helping organizations
+                  Our vision is to be Qatar’s trusted healthcare technology partner, helping organizations
                   connect systems, protect data and continuously improve digital care delivery.
                 </p>
               </div>

@@ -44,15 +44,15 @@ const products = [
 
 const specialities = [
   {
-    title: 'Medical IT',
+    title: 'Clinical IT Infrastructure',
     description: 'Secure, reliable technology foundations designed around clinical operations, compliance and patient care.',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=85',
     alt: 'Digital analytics dashboard displayed on a computer screen.',
     position: 'center',
   },
   {
-    title: 'Healthcare IT',
-    description: 'Connected digital platforms that streamline information sharing and support coordinated care teams.',
+    title: 'Care Coordination Systems',
+    description: 'Digital platforms that streamline information sharing and keep care teams aligned.',
     image: '/hero.png',
     alt: 'Healthcare team reviewing digital information on a tablet.',
     position: 'right center',
@@ -110,9 +110,9 @@ const processSteps = [
 
 const faqs = [
   {
-    question: 'Which Healthcare IT solutions do you provide?',
+    question: 'Which solutions do you provide?',
     answer:
-      'We support Healthcare IT strategy, CRM, ERP, EMR, patient engagement, cloud, cybersecurity, analytics and standards-based system integration.',
+      'We cover digital strategy, CRM, ERP, EMR, patient engagement, cloud, cybersecurity, analytics and standards-based system integration.',
   },
   {
     question: 'Can you work with our existing systems?',
@@ -122,10 +122,10 @@ const faqs = [
   {
     question: 'Do you support healthcare organizations across Qatar?',
     answer:
-      'Baraka Medical Devices is based in Doha and supports healthcare organizations across Qatar with discovery, implementation and ongoing technical support.',
+      'Baraka Medical Solutions is based in Doha and supports healthcare organizations across Qatar with discovery, implementation and ongoing technical support.',
   },
   {
-    question: 'How do we start a Healthcare IT project?',
+    question: 'How do we start a project?',
     answer:
       'Book a consultation and share your goals, current environment and preferred timeline. We will arrange a discovery conversation and recommend practical next steps.',
   },
@@ -277,10 +277,10 @@ const Home = () => {
           <div className="mx-auto max-w-[36rem] text-center">
             <h1
               className="font-serif text-[46px] font-normal leading-[0.98] tracking-[-0.045em] sm:text-[64px] lg:text-[76px]"
-              aria-label="Healthcare IT that moves care forward"
+              aria-label="Technology that moves care forward"
             >
               <span className="block sm:whitespace-nowrap">
-                <AnimatedLine text="Healthcare IT that" startDelay={180} />
+                <AnimatedLine text="Technology that" startDelay={180} />
               </span>
               <span className="block sm:whitespace-nowrap">
                 <AnimatedLine text="moves care forward." startDelay={430} />
@@ -327,7 +327,7 @@ const Home = () => {
                 Focused capabilities
               </p>
               <p className="mt-4 max-w-xs text-sm leading-6 text-slate-500">
-                Healthcare software and connected systems shaped around the needs of your organization.
+                Healthcare IT services shaped around your clinical and operational needs.
               </p>
             </div>
             <div>
@@ -338,8 +338,8 @@ const Home = () => {
                 Digital solutions for smarter healthcare operations.
               </h2>
               <p className="mt-5 max-w-2xl text-[15px] leading-7 text-slate-600">
-                From Medical IT and patient engagement to CRM, ERP and interoperable data,
-                we build connected platforms that help healthcare organizations work better.
+                From infrastructure and patient engagement to CRM, ERP and interoperable data,
+                we build the systems that help healthcare organizations work better.
               </p>
             </div>
           </div>
@@ -463,7 +463,7 @@ const Home = () => {
         <div className="mx-auto max-w-[1180px]">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="font-serif text-4xl leading-[1.06] tracking-[-0.04em] sm:text-6xl">
-              A Healthcare IT partner from strategy through support.
+              One partner from strategy through support.
             </h2>
           </div>
 
@@ -588,7 +588,7 @@ const Home = () => {
                 Let’s build better-connected care.
               </h2>
               <p className="mx-auto mt-5 max-w-xl text-[15px] leading-7 text-white/70">
-                Tell us where your organization wants to go. We’ll help define the right Healthcare IT
+                Tell us where your organization wants to go. We’ll help define the right technology
                 strategy, implementation roadmap and support model.
               </p>
               <div className="mt-7"><ArrowLink to="/contact" light>Book a consultation</ArrowLink></div>

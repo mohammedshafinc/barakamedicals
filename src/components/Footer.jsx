@@ -1,5 +1,6 @@
 import { ArrowRight, Mail, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Logo from './Logo';
 
 const Footer = () => {
   return (
@@ -10,19 +11,13 @@ const Footer = () => {
             <Link
               to="/"
               className="inline-flex items-center transition-opacity hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-950"
-              aria-label="Baraka Medical Devices home"
+              aria-label="Baraka Medical Solutions home"
             >
-              <img
-                src="/logo/baraka-full.svg"
-                alt=""
-                className="h-10 w-auto sm:h-11"
-                width="725"
-                height="216"
-              />
+              <Logo className="h-10 w-auto sm:h-11" label={null} />
             </Link>
             <p className="mt-5 text-sm leading-7 text-slate-500">
-              Healthcare IT strategy, platforms, integration, cloud and cybersecurity backed by
-              thoughtful implementation and responsive support.
+              Healthcare technology strategy, platforms, integration, cloud and cybersecurity,
+              backed by thoughtful implementation and responsive support.
             </p>
           </div>
 
@@ -61,7 +56,7 @@ const Footer = () => {
       </div>
 
       <div className="mx-auto flex max-w-[1180px] flex-col gap-3 border-b border-slate-200 py-6 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
-        <p>© {new Date().getFullYear()} Baraka Medical Devices.</p>
+        <p>© {new Date().getFullYear()} Baraka Medical Solutions.</p>
         <p>Connected healthcare, delivered with clarity and care.</p>
       </div>
 
