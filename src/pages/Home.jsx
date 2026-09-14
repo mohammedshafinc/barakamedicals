@@ -13,6 +13,7 @@ import {
   Stethoscope,
   Truck,
 } from 'lucide-react';
+import { Fragment } from 'react';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 import useDocumentMeta from '../hooks/useDocumentMeta';
@@ -23,7 +24,7 @@ const products = [
     title: 'Clarity for every diagnosis.',
     description:
       'Diagnostic and imaging equipment selected for accuracy and reliability, helping clinical teams in Qatar assess with confidence and avoid unnecessary delays.',
-    image: '/hero2.png',
+    image: '/hero2.webp',
     alt: 'Diagnostic medical equipment arranged in a modern clinical room.',
   },
   {
@@ -31,7 +32,7 @@ const products = [
     title: 'Continuous insight, around the clock.',
     description:
       'Patient monitoring systems for wards, theatres and critical care, supplied with practical guidance so you choose the right configuration first time.',
-    image: '/hero.png',
+    image: '/hero.webp',
     alt: 'Clinician reviewing patient monitoring readings at the bedside.',
   },
   {
@@ -39,7 +40,7 @@ const products = [
     title: 'Everyday essentials, always in stock.',
     description:
       'Dependable supply of the medical consumables your teams use daily, backed by responsive communication and straightforward reordering.',
-    image: '/consumabkes.jpg',
+    image: '/consumabkes.webp',
     alt: 'Medical consumables and clinical supplies prepared for distribution.',
   },
 ];
@@ -49,7 +50,7 @@ const specialities = [
     title: 'Rehabilitation Equipment',
     description:
       'Mobility aids, therapy equipment and support products that help patients regain strength and independence.',
-    image: '/rehab.jpg',
+    image: '/rehab.webp',
     alt: 'Physiotherapist supporting a patient using rehabilitation equipment.',
     position: 'center',
   },
@@ -65,7 +66,7 @@ const specialities = [
     title: 'Diagnostics & Imaging',
     description:
       'Accurate diagnostic instruments and imaging systems for hospitals, clinics and laboratories.',
-    image: '/hero2.png',
+    image: '/hero2.webp',
     alt: 'Diagnostic imaging equipment in a hospital examination room.',
     position: 'center',
   },
@@ -73,7 +74,7 @@ const specialities = [
     title: 'Patient Monitoring',
     description:
       'Vital signs monitors and continuous monitoring systems for wards, theatres and critical care.',
-    image: '/hero.png',
+    image: '/hero.webp',
     alt: 'Patient monitor displaying vital signs beside a hospital bed.',
     position: 'right center',
   },
@@ -81,7 +82,7 @@ const specialities = [
     title: 'Medical Consumables',
     description:
       'Essential day-to-day supplies with dependable availability and responsive restocking.',
-    image: '/consumabkes.jpg',
+    image: '/consumabkes.webp',
     alt: 'Boxes of medical consumables and disposable clinical supplies.',
     position: 'right center',
   },
@@ -89,7 +90,7 @@ const specialities = [
     title: 'Biomedical Engineering',
     description:
       'Installation, calibration, servicing and lifecycle support for your medical equipment.',
-    image: '/bio.jpg',
+    image: '/bio.webp',
     alt: 'Biomedical engineer servicing medical equipment electronics.',
     position: 'center',
   },
@@ -145,16 +146,22 @@ const faqs = [
 ];
 
 function AnimatedLine({ text, startDelay }) {
+  // The space between words is rendered as a real text node rather than a
+  // margin. React emits no whitespace between mapped siblings, and a browser
+  // can only break a line at actual whitespace, so margin-based gaps would
+  // make the whole heading one unbreakable run that overflows its container.
   return (
     <span aria-hidden="true">
       {text.split(' ').map((word, index) => (
-        <span
-          key={`${word}-${index}`}
-          className="word-reveal mr-[0.24em] last:mr-0"
-          style={{ '--word-delay': `${startDelay + index * 75}ms` }}
-        >
-          {word}
-        </span>
+        <Fragment key={`${word}-${index}`}>
+          {index > 0 && ' '}
+          <span
+            className="word-reveal"
+            style={{ '--word-delay': `${startDelay + index * 75}ms` }}
+          >
+            {word}
+          </span>
+        </Fragment>
       ))}
     </span>
   );
@@ -289,36 +296,91 @@ const Home = () => {
       <section className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-[#dcebed] text-white">
         <div className="hero-aurora" aria-hidden="true" />
         <div
-          className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,25,22,0.38)_0%,rgba(10,25,22,0.16)_48%,rgba(10,25,22,0.03)_82%),linear-gradient(180deg,rgba(7,20,22,0.24)_0%,transparent_30%,rgba(7,18,14,0.32)_100%)]"
+          className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,25,22,0.62)_0%,rgba(10,25,22,0.42)_38%,rgba(10,25,22,0.12)_70%,rgba(10,25,22,0.04)_100%),linear-gradient(180deg,rgba(7,20,22,0.26)_0%,transparent_32%,rgba(7,18,14,0.34)_100%)]"
           aria-hidden="true"
         />
 
-        <div className="page-reveal relative mx-auto w-full max-w-[1340px] px-5 py-32 sm:px-8 sm:py-36 lg:px-10 xl:px-8">
-          <div className="mx-auto max-w-[36rem] text-center">
-            <h1
-              className="font-serif text-[46px] font-normal leading-[0.98] tracking-[-0.045em] sm:text-[64px] lg:text-[76px]"
-              aria-label="Qatar's leading medical device supplier"
-            >
-              <span className="block sm:whitespace-nowrap">
-                <AnimatedLine text="Qatar’s leading" startDelay={180} />
-              </span>
-              <span className="block sm:whitespace-nowrap">
-                <AnimatedLine text="medical device supplier." startDelay={430} />
-              </span>
-            </h1>
-            <p className="mx-auto mt-6 max-w-md text-[15px] leading-7 text-white/75 sm:text-base">
-              Supplying hospitals, clinics, laboratories and pharmacies across Doha and Qatar with
-              diagnostic equipment, patient monitoring, rehabilitation devices and medical
-              consumables.
-            </p>
-            <div className="mt-7 flex flex-wrap justify-center gap-3">
-              <ArrowLink to="/contact" light>Request a quote</ArrowLink>
-              <Link
-                to="/about"
-                className="inline-flex items-center rounded-full border border-white/40 bg-white/5 px-5 py-3 text-[13px] font-medium text-white backdrop-blur transition-colors hover:bg-white/15"
+        <div className="page-reveal relative mx-auto w-full max-w-[1340px] px-5 py-28 sm:px-8 sm:py-32 lg:px-10 xl:px-8">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:gap-16 xl:gap-20">
+            <div className="mx-auto max-w-xl text-center lg:mx-0 lg:text-left">
+              <p className="text-[11px] font-medium uppercase tracking-[0.34em] text-white/70">
+                Medical Device Supplier · Doha, Qatar
+              </p>
+
+              <h1
+                className="mt-5 text-balance font-serif text-[34px] font-normal leading-[1.06] tracking-[-0.035em] sm:text-[44px] lg:text-[40px] xl:text-[50px] 2xl:text-[56px]"
+                aria-label="Reliable Medical Device Solutions for Qatar’s Healthcare Sector"
               >
-                About Baraka
-              </Link>
+                <AnimatedLine
+                  text="Reliable Medical Device Solutions for Qatar’s Healthcare Sector"
+                  startDelay={180}
+                />
+              </h1>
+
+              <p className="mt-6 text-[15px] leading-7 text-white/80 sm:text-base">
+                Baraka Medical Solutions supplies medical devices, equipment and consumables to
+                hospitals, clinics, laboratories and pharmacies across Qatar — with dependable
+                sourcing, delivery and professional support.
+              </p>
+
+              <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
+                <ArrowLink to="/contact" light>Request a Quote</ArrowLink>
+                <a
+                  href="#specialities"
+                  className="inline-flex items-center rounded-full border border-white/40 bg-white/5 px-5 py-3 text-[13px] font-medium text-white backdrop-blur transition-colors hover:bg-white/15"
+                >
+                  Explore Our Solutions
+                </a>
+              </div>
+
+              <ul className="mt-9 flex flex-wrap justify-center gap-x-6 gap-y-2.5 text-[12px] text-white/70 lg:justify-start">
+                <li className="inline-flex items-center gap-2">
+                  <Check className="h-3.5 w-3.5 text-[#c5dd8f]" aria-hidden="true" />
+                  CE &amp; ISO certified products
+                </li>
+                <li className="inline-flex items-center gap-2">
+                  <Check className="h-3.5 w-3.5 text-[#c5dd8f]" aria-hidden="true" />
+                  Delivery across Qatar
+                </li>
+                <li className="inline-flex items-center gap-2">
+                  <Check className="h-3.5 w-3.5 text-[#c5dd8f]" aria-hidden="true" />
+                  Installation &amp; servicing
+                </li>
+              </ul>
+            </div>
+
+            <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-slate-900/40 shadow-[0_40px_90px_-30px_rgba(8,24,20,0.65)] ring-1 ring-white/25 sm:rounded-[1.75rem]">
+                <img
+                  src="/hero2.webp"
+                  alt="Diagnostic and patient monitoring equipment supplied by Baraka Medical Solutions in a clinical setting in Doha, Qatar."
+                  className="h-full w-full object-cover"
+                  width="1600"
+                  height="854"
+                  fetchPriority="high"
+                  decoding="async"
+                />
+                <div
+                  className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(8,22,19,0.55)_100%)]"
+                  aria-hidden="true"
+                />
+              </div>
+
+              <div className="absolute -bottom-5 left-4 right-4 rounded-2xl border border-white/25 bg-[#12261f]/80 px-5 py-4 backdrop-blur sm:left-6 sm:right-auto sm:max-w-[19rem]">
+                <div className="flex items-center gap-3">
+                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white/15">
+                    <PackageCheck className="h-4 w-4" strokeWidth={1.6} aria-hidden="true" />
+                  </span>
+                  <div>
+                    <p className="text-[13px] font-medium leading-tight text-white">
+                      Genuine, quality-assured equipment
+                    </p>
+                    <p className="mt-1 text-[11px] leading-tight text-white/65">
+                      Sourced from established manufacturers
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -424,7 +486,7 @@ const Home = () => {
             </div>
 
             <div className="relative min-h-[420px] overflow-hidden rounded-[2rem] bg-slate-900">
-              <img src="/hero2.png" alt="Medical equipment prepared for delivery to a hospital in Doha." className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+              <img src="/consumabkes.webp" alt="Medical supplies and equipment prepared for delivery to a hospital in Doha." className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-7 text-white">
                 <p className="font-serif text-3xl">Genuine products, ready when you need them.</p>
@@ -526,7 +588,7 @@ const Home = () => {
 
       <section className="px-4 pb-4 sm:px-6 sm:pb-6">
         <div className="relative mx-auto min-h-[560px] max-w-[1340px] overflow-hidden rounded-[2.5rem] bg-slate-950 sm:rounded-[3rem]">
-          <img src="/consumabkes.jpg" alt="Medical supplies and equipment ready for dispatch to healthcare facilities." className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+          <img src="/rehab.webp" alt="Healthcare professional supporting a patient using rehabilitation equipment." className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
           <div className="absolute inset-0 bg-slate-950/55" />
           <div className="relative flex min-h-[560px] items-center justify-center px-5 py-20 text-center text-white">
             <div className="max-w-3xl">

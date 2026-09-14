@@ -73,7 +73,7 @@ const About = () => {
       <section className="px-4 sm:px-6">
         <div className="relative mx-auto aspect-[16/8] min-h-[430px] max-w-[1340px] overflow-hidden rounded-[2.5rem] bg-slate-900 sm:rounded-[3rem]">
           <img
-            src="/hero2.png"
+            src="/hero2.webp"
             alt="Medical equipment arranged in a bright clinical environment in Doha, Qatar."
             className="absolute inset-0 h-full w-full object-cover"
             fetchPriority="high"
@@ -211,7 +211,7 @@ const About = () => {
       <section className="px-4 pb-4 sm:px-6 sm:pb-6">
         <div className="relative mx-auto min-h-[560px] max-w-[1340px] overflow-hidden rounded-[2.5rem] bg-slate-950 sm:rounded-[3rem]">
           <img
-            src="/bio.jpg"
+            src="/bio.webp"
             alt="Biomedical engineer inspecting medical equipment before delivery."
             className="absolute inset-0 h-full w-full object-cover object-center"
             loading="lazy"
