@@ -9,7 +9,7 @@
 const WHATSAPP_NUMBER = '97433931435';
 
 const PREFILLED_MESSAGE =
-  'Hello Baraka Medical Solutions, I would like to enquire about your healthcare IT services.';
+  'Hello Baraka Medical Solutions, I would like to request a quote for medical equipment.';
 
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
   PREFILLED_MESSAGE,

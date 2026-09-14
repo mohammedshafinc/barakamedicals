@@ -4,6 +4,7 @@ import {
   Boxes,
   Check,
   ChevronDown,
+  ClipboardCheck,
   Headphones,
   Mail,
   MapPin,
@@ -14,75 +15,82 @@ import {
 } from 'lucide-react';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
+import useDocumentMeta from '../hooks/useDocumentMeta';
 
 const products = [
   {
-    id: 'digital-care-platforms',
-    title: 'Connected care, designed around people.',
+    id: 'diagnostics',
+    title: 'Clarity for every diagnosis.',
     description:
-      'Patient portals, EMR workflows and engagement platforms that make access, communication and coordinated care simpler.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=85',
-    alt: 'Healthcare software dashboard displaying connected care insights.',
+      'Diagnostic and imaging equipment selected for accuracy and reliability, helping clinical teams in Qatar assess with confidence and avoid unnecessary delays.',
+    image: '/hero2.png',
+    alt: 'Diagnostic medical equipment arranged in a modern clinical room.',
   },
   {
-    id: 'cloud-cybersecurity',
-    title: 'A secure foundation for every service.',
+    id: 'monitoring',
+    title: 'Continuous insight, around the clock.',
     description:
-      'Resilient cloud architecture, identity controls and cybersecurity programs built to protect healthcare operations and sensitive data.',
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=85',
-    alt: 'Secure cloud infrastructure in a modern data center.',
+      'Patient monitoring systems for wards, theatres and critical care, supplied with practical guidance so you choose the right configuration first time.',
+    image: '/hero.png',
+    alt: 'Clinician reviewing patient monitoring readings at the bedside.',
   },
   {
-    id: 'data-interoperability',
-    title: 'Turn connected data into better decisions.',
+    id: 'consumables',
+    title: 'Everyday essentials, always in stock.',
     description:
-      'Standards-based integrations, analytics and information flows that connect clinical, operational and patient-facing systems.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=85',
-    alt: 'Analytics interface visualizing integrated healthcare data.',
+      'Dependable supply of the medical consumables your teams use daily, backed by responsive communication and straightforward reordering.',
+    image: '/consumabkes.jpg',
+    alt: 'Medical consumables and clinical supplies prepared for distribution.',
   },
 ];
 
 const specialities = [
   {
-    title: 'Clinical IT Infrastructure',
-    description: 'Secure, reliable technology foundations designed around clinical operations, compliance and patient care.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=85',
-    alt: 'Digital analytics dashboard displayed on a computer screen.',
+    title: 'Rehabilitation Equipment',
+    description:
+      'Mobility aids, therapy equipment and support products that help patients regain strength and independence.',
+    image: '/rehab.jpg',
+    alt: 'Physiotherapist supporting a patient using rehabilitation equipment.',
     position: 'center',
   },
   {
-    title: 'Care Coordination Systems',
-    description: 'Digital platforms that streamline information sharing and keep care teams aligned.',
+    title: 'ENT & Audiology',
+    description:
+      'Diagnostic and treatment devices for ear, nose, throat and hearing care specialists.',
+    image: '/ent.jpg',
+    alt: 'ENT and audiology diagnostic instruments in a specialist clinic.',
+    position: 'center center',
+  },
+  {
+    title: 'Diagnostics & Imaging',
+    description:
+      'Accurate diagnostic instruments and imaging systems for hospitals, clinics and laboratories.',
+    image: '/hero2.png',
+    alt: 'Diagnostic imaging equipment in a hospital examination room.',
+    position: 'center',
+  },
+  {
+    title: 'Patient Monitoring',
+    description:
+      'Vital signs monitors and continuous monitoring systems for wards, theatres and critical care.',
     image: '/hero.png',
-    alt: 'Healthcare team reviewing digital information on a tablet.',
+    alt: 'Patient monitor displaying vital signs beside a hospital bed.',
     position: 'right center',
   },
   {
-    title: 'Healthcare CRM',
-    description: 'Patient relationship tools for managing enquiries, engagement, communications and service journeys.',
-    image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85',
-    alt: 'Team collaborating around a digital customer relationship platform.',
-    position: 'center',
+    title: 'Medical Consumables',
+    description:
+      'Essential day-to-day supplies with dependable availability and responsive restocking.',
+    image: '/consumabkes.jpg',
+    alt: 'Boxes of medical consumables and disposable clinical supplies.',
+    position: 'right center',
   },
   {
-    title: 'Healthcare ERP',
-    description: 'Integrated systems for finance, operations, workforce, resource planning and performance management.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=85',
-    alt: 'Business intelligence dashboard showing operational data.',
-    position: 'center',
-  },
-  {
-    title: 'Electronic Medical Records',
-    description: 'Structured, accessible clinical records that improve documentation, continuity and informed decisions.',
-    image: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1200&q=85',
-    alt: 'Healthcare professional working with digital clinical records.',
-    position: 'center',
-  },
-  {
-    title: 'Data & System Integration',
-    description: 'Interoperability, analytics and connected workflows that bring healthcare systems and data together.',
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=85',
-    alt: 'Secure server infrastructure supporting connected digital systems.',
+    title: 'Biomedical Engineering',
+    description:
+      'Installation, calibration, servicing and lifecycle support for your medical equipment.',
+    image: '/bio.jpg',
+    alt: 'Biomedical engineer servicing medical equipment electronics.',
     position: 'center',
   },
 ];
@@ -90,44 +98,49 @@ const specialities = [
 const processSteps = [
   {
     number: '01',
-    title: 'Discover the opportunity',
-    description: 'We map your goals, users, current systems, risks and measures of success.',
+    title: 'Send us your requirements',
+    description: 'Share the products, quantities and timeline your facility needs.',
     icon: Mail,
   },
   {
     number: '02',
-    title: 'Design the right solution',
-    description: 'Together, we define the architecture, roadmap and implementation priorities.',
-    icon: Stethoscope,
+    title: 'Receive a clear quotation',
+    description: 'We confirm specifications, current availability and transparent pricing.',
+    icon: ClipboardCheck,
   },
   {
     number: '03',
-    title: 'Implement and support',
-    description: 'We deliver, integrate and optimize your platform with responsive local support.',
+    title: 'Delivered to your facility',
+    description: 'Once approved, we coordinate supply, delivery and installation support.',
     icon: Truck,
   },
 ];
 
 const faqs = [
   {
-    question: 'Which solutions do you provide?',
+    question: 'What medical devices do you supply in Qatar?',
     answer:
-      'We cover digital strategy, CRM, ERP, EMR, patient engagement, cloud, cybersecurity, analytics and standards-based system integration.',
+      'Baraka Medical Solutions supplies diagnostic and imaging equipment, patient monitoring systems, rehabilitation equipment, ENT and audiology devices, surgical instruments and medical consumables to hospitals, clinics, laboratories and pharmacies across Qatar.',
   },
   {
-    question: 'Can you work with our existing systems?',
+    question: 'Do you deliver medical equipment across Doha and Qatar?',
     answer:
-      'Yes. We begin by understanding your current applications, infrastructure and workflows, then design an integration or modernization path that protects continuity.',
+      'Yes. We are based in Doha and deliver to healthcare facilities throughout Qatar. Share your location and requirements and we will confirm delivery timelines with your quotation.',
   },
   {
-    question: 'Do you support healthcare organizations across Qatar?',
+    question: 'Are your medical devices certified and compliant?',
     answer:
-      'Baraka Medical Solutions is based in Doha and supports healthcare organizations across Qatar with discovery, implementation and ongoing technical support.',
+      'We supply products from established manufacturers and prioritise internationally recognised quality and safety standards, including CE marking and ISO certification. Certification documents can be provided for any product on request.',
   },
   {
-    question: 'How do we start a project?',
+    question: 'Do you provide installation and after-sales support?',
     answer:
-      'Book a consultation and share your goals, current environment and preferred timeline. We will arrange a discovery conversation and recommend practical next steps.',
+      'Yes. Our biomedical engineering team supports installation, calibration, servicing and spare parts, so your equipment stays reliable throughout its working life.',
+  },
+  {
+    question: 'How do I request a quotation?',
+    answer:
+      'Use the request a quote button, message us on WhatsApp or email info@barakamedicals.com. Include the product, quantity and required delivery date where possible so we can respond quickly.',
   },
 ];
 
@@ -167,19 +180,19 @@ function ArrowLink({ children, to, light = false }) {
 }
 
 function ProductPanel({ id }) {
-  if (id === 'digital-care-platforms') {
+  if (id === 'diagnostics') {
     return (
       <div className="absolute left-1/2 top-1/2 w-[78%] max-w-sm -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-white/70 bg-white/95 p-4 shadow-[0_24px_70px_-24px_rgba(15,23,42,0.55)] backdrop-blur sm:p-5">
         <div className="flex items-center justify-between gap-4">
           <div>
-            <p className="text-sm font-medium text-slate-900">Digital care journey</p>
+            <p className="text-sm font-medium text-slate-900">Diagnostic range</p>
           </div>
           <span className="grid h-8 w-8 place-items-center rounded-full bg-[#e9f0e4] text-[#476042]">
             <Stethoscope className="h-4 w-4" aria-hidden="true" />
           </span>
         </div>
         <div className="mt-4 grid grid-cols-3 gap-2 text-[10px] text-slate-500">
-          {['Patient portal', 'EMR workflow', 'Engagement'].map((label) => (
+          {['Imaging', 'Laboratory', 'Examination'].map((label) => (
             <div key={label} className="rounded-lg bg-[#f4f1e9] px-2.5 py-2.5">
               {label}
             </div>
@@ -189,14 +202,14 @@ function ProductPanel({ id }) {
     );
   }
 
-  if (id === 'cloud-cybersecurity') {
+  if (id === 'monitoring') {
     return (
       <div className="absolute left-1/2 top-1/2 w-[78%] max-w-sm -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-white/70 bg-white/95 p-4 shadow-[0_24px_70px_-24px_rgba(15,23,42,0.55)] backdrop-blur sm:p-5">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm font-medium text-slate-900">Secure cloud operations</p>
+            <p className="text-sm font-medium text-slate-900">Vital signs monitoring</p>
           </div>
-          <ShieldCheck className="h-5 w-5 text-[#527c78]" aria-hidden="true" />
+          <Activity className="h-5 w-5 text-[#527c78]" aria-hidden="true" />
         </div>
         <svg className="mt-4 h-14 w-full" viewBox="0 0 320 56" fill="none" aria-hidden="true">
           <path d="M0 35h47l12-19 18 33 16-25 13 11h44l14-20 18 34 17-24 12 10h109" stroke="#6d9690" strokeWidth="2" />
@@ -210,17 +223,17 @@ function ProductPanel({ id }) {
     <div className="absolute left-1/2 top-1/2 w-[78%] max-w-sm -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-white/70 bg-white/95 p-4 shadow-[0_24px_70px_-24px_rgba(15,23,42,0.55)] backdrop-blur sm:p-5">
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-sm font-medium text-slate-900">Interoperability hub</p>
+          <p className="text-sm font-medium text-slate-900">Stock availability</p>
         </div>
         <Boxes className="h-5 w-5 text-[#976c54]" aria-hidden="true" />
       </div>
       <div className="mt-4 space-y-2">
-        {['Clinical systems', 'Operational data', 'Patient services'].map((label, index) => (
+        {['Examination gloves', 'Wound care', 'Syringes & needles'].map((label, index) => (
           <div key={label} className="flex items-center justify-between rounded-lg bg-[#f4f1e9] px-3 py-2 text-[10px] text-slate-600">
             <span>{label}</span>
             <span className="flex items-center gap-1 text-[#527c5c]">
               <Check className="h-3 w-3" aria-hidden="true" />
-              {index === 0 ? 'Connected' : 'Synchronized'}
+              {index === 0 ? 'In stock' : 'Available'}
             </span>
           </div>
         ))}
@@ -255,7 +268,7 @@ function ProductFeature({ product, reverse }) {
           to="/contact"
           className="group mt-6 inline-flex items-center gap-2 text-[13px] font-medium text-slate-950"
         >
-          Discuss your project
+          Request a quote
           <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
         </Link>
       </div>
@@ -264,6 +277,13 @@ function ProductFeature({ product, reverse }) {
 }
 
 const Home = () => {
+  useDocumentMeta({
+    title: 'Medical Devices Supplier in Qatar | Baraka Medical Solutions Doha',
+    description:
+      'Baraka Medical Solutions is a leading medical device supplier in Doha, Qatar. Diagnostic equipment, patient monitoring, rehabilitation devices, ENT and medical consumables with fast quotes and nationwide delivery.',
+    path: '/',
+  });
+
   return (
     <div className="bg-[#f4f1e9] text-slate-950">
       <section className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-[#dcebed] text-white">
@@ -277,21 +297,22 @@ const Home = () => {
           <div className="mx-auto max-w-[36rem] text-center">
             <h1
               className="font-serif text-[46px] font-normal leading-[0.98] tracking-[-0.045em] sm:text-[64px] lg:text-[76px]"
-              aria-label="Technology that moves care forward"
+              aria-label="Qatar's leading medical device supplier"
             >
               <span className="block sm:whitespace-nowrap">
-                <AnimatedLine text="Technology that" startDelay={180} />
+                <AnimatedLine text="Qatar’s leading" startDelay={180} />
               </span>
               <span className="block sm:whitespace-nowrap">
-                <AnimatedLine text="moves care forward." startDelay={430} />
+                <AnimatedLine text="medical device supplier." startDelay={430} />
               </span>
             </h1>
             <p className="mx-auto mt-6 max-w-md text-[15px] leading-7 text-white/75 sm:text-base">
-              Strategy, platforms, cloud, cybersecurity and integration for healthcare organizations
-              across Qatar.
+              Supplying hospitals, clinics, laboratories and pharmacies across Doha and Qatar with
+              diagnostic equipment, patient monitoring, rehabilitation devices and medical
+              consumables.
             </p>
             <div className="mt-7 flex flex-wrap justify-center gap-3">
-              <ArrowLink to="/contact" light>Book a consultation</ArrowLink>
+              <ArrowLink to="/contact" light>Request a quote</ArrowLink>
               <Link
                 to="/about"
                 className="inline-flex items-center rounded-full border border-white/40 bg-white/5 px-5 py-3 text-[13px] font-medium text-white backdrop-blur transition-colors hover:bg-white/15"
@@ -306,11 +327,11 @@ const Home = () => {
       <section className="px-5 py-28 text-center sm:px-8 sm:py-36">
         <div className="mx-auto max-w-3xl">
           <h2 className="font-serif text-4xl leading-[1.08] tracking-[-0.035em] sm:text-6xl">
-            Digital foundations for connected, resilient care.
+            Medical equipment that keeps care moving.
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-7 text-slate-600">
-            We align technology with clinical and operational priorities, then implement and support
-            systems that help your teams work securely and confidently.
+            We pair quality-assured products from trusted manufacturers with practical guidance and
+            responsive service, so your team can stay focused on patients.
           </p>
         </div>
       </section>
@@ -329,10 +350,10 @@ const Home = () => {
               Our Specialities
             </h2>
             <p className="mt-7 max-w-5xl text-[15px] leading-7 text-slate-600 sm:text-base">
-              Our focused solutions bring together dependable medical technology, practical
-              expertise and responsive support. From rehabilitation and laboratory systems to
-              connected care and biomedical engineering, we help healthcare teams improve
-              operations and deliver better patient outcomes.
+              Our product range brings together dependable medical devices, practical expertise and
+              responsive support. From rehabilitation and ENT to diagnostics, patient monitoring,
+              consumables and biomedical engineering, we help healthcare teams across Qatar equip
+              their facilities and deliver better patient outcomes.
             </p>
           </div>
 
@@ -362,9 +383,9 @@ const Home = () => {
                   <Link
                     to="/contact"
                     className="group/link mt-5 inline-flex items-center gap-2 text-[12px] font-medium text-white"
-                    aria-label={`Discuss ${title} requirements`}
+                    aria-label={`Request a quote for ${title}`}
                   >
-                    Discuss your project
+                    Request a quote
                     <ArrowRight
                       className="h-3.5 w-3.5 transition-transform group-hover/link:translate-x-1"
                       aria-hidden="true"
@@ -377,7 +398,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section id="solutions" className="scroll-mt-28 px-5 pb-28 sm:px-8 sm:pb-40">
+      <section id="products" className="scroll-mt-28 px-5 pb-28 sm:px-8 sm:pb-40">
         <div className="mx-auto max-w-[1180px] space-y-28 sm:space-y-40">
           {products.map((product, index) => (
             <ProductFeature key={product.id} product={product} reverse={index % 2 === 1} />
@@ -389,32 +410,32 @@ const Home = () => {
         <div className="mx-auto max-w-[1180px]">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="font-serif text-4xl leading-[1.06] tracking-[-0.04em] sm:text-6xl">
-              One partner from strategy through support.
+              The supply partner healthcare teams in Qatar rely on.
             </h2>
           </div>
 
           <div className="mt-16 grid gap-4 md:grid-cols-3 md:items-stretch">
             <div className="rounded-[2rem] bg-[#b9cbb9] p-7 md:mt-16">
               <ShieldCheck className="h-6 w-6" strokeWidth={1.5} aria-hidden="true" />
-              <h3 className="mt-16 font-serif text-2xl">Healthcare-aware delivery</h3>
+              <h3 className="mt-16 font-serif text-2xl">Certified quality</h3>
               <p className="mt-3 text-sm leading-6 text-slate-700">
-                Clinical context, security and interoperability guide every engagement.
+                Products chosen against recognised safety and quality standards.
               </p>
             </div>
 
             <div className="relative min-h-[420px] overflow-hidden rounded-[2rem] bg-slate-900">
-              <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1400&q=85" alt="Secure infrastructure supporting connected healthcare services." className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+              <img src="/hero2.png" alt="Medical equipment prepared for delivery to a hospital in Doha." className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-7 text-white">
-                <p className="font-serif text-3xl">Clear guidance from discovery to ongoing support.</p>
+                <p className="font-serif text-3xl">Genuine products, ready when you need them.</p>
               </div>
             </div>
 
             <div className="rounded-[2rem] bg-[#d7c7b7] p-7 md:mt-10 md:mb-6">
               <Headphones className="h-6 w-6" strokeWidth={1.5} aria-hidden="true" />
-              <h3 className="mt-16 font-serif text-2xl">Responsive partnership</h3>
+              <h3 className="mt-16 font-serif text-2xl">Responsive service</h3>
               <p className="mt-3 text-sm leading-6 text-slate-700">
-                Practical collaboration and support long after implementation.
+                Fast quotations, clear communication and dependable follow-through.
               </p>
             </div>
           </div>
@@ -425,13 +446,13 @@ const Home = () => {
         <div className="mx-auto grid max-w-[1180px] items-center gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <div className="max-w-md">
             <h2 className="font-serif text-4xl leading-[1.06] tracking-[-0.04em] sm:text-5xl">
-              Based in Doha. Ready to advance your digital roadmap.
+              Based in Doha. Supplying all of Qatar.
             </h2>
             <p className="mt-5 text-[15px] leading-7 text-slate-600">
-              Bring us your goals and current technology landscape. Our team will shape a practical
-              path from discovery and architecture through implementation and support.
+              Send us your requirements and our team will respond with suitable products, clear
+              pricing and current availability.
             </p>
-            <div className="mt-7"><ArrowLink to="/contact">Book a consultation</ArrowLink></div>
+            <div className="mt-7"><ArrowLink to="/contact">Request a quote</ArrowLink></div>
           </div>
 
           <div className="relative min-h-[480px] overflow-hidden rounded-[2.5rem] bg-[#dce7e9] p-6 sm:p-10">
@@ -450,9 +471,9 @@ const Home = () => {
               </div>
               <div className="my-5 h-px bg-slate-200" />
               <div className="space-y-3 text-sm text-slate-600">
-                <p className="flex items-center gap-2"><Check className="h-4 w-4 text-[#66816a]" /> Strategic discovery</p>
-                <p className="flex items-center gap-2"><Check className="h-4 w-4 text-[#66816a]" /> Secure implementation</p>
-                <p className="flex items-center gap-2"><Check className="h-4 w-4 text-[#66816a]" /> Local ongoing support</p>
+                <p className="flex items-center gap-2"><Check className="h-4 w-4 text-[#66816a]" /> Product guidance</p>
+                <p className="flex items-center gap-2"><Check className="h-4 w-4 text-[#66816a]" /> Fast quotations</p>
+                <p className="flex items-center gap-2"><Check className="h-4 w-4 text-[#66816a]" /> Nationwide delivery</p>
               </div>
             </div>
           </div>
@@ -462,7 +483,7 @@ const Home = () => {
       <section id="process" className="scroll-mt-28 bg-[#ebe4d9] px-5 py-28 sm:px-8 sm:py-36">
         <div className="mx-auto max-w-[1180px]">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="font-serif text-4xl tracking-[-0.04em] sm:text-6xl">A clear path from idea to impact.</h2>
+            <h2 className="font-serif text-4xl tracking-[-0.04em] sm:text-6xl">Simple from the first enquiry.</h2>
           </div>
 
           <div className="mt-14 grid gap-4 md:grid-cols-3">
@@ -505,19 +526,19 @@ const Home = () => {
 
       <section className="px-4 pb-4 sm:px-6 sm:pb-6">
         <div className="relative mx-auto min-h-[560px] max-w-[1340px] overflow-hidden rounded-[2.5rem] bg-slate-950 sm:rounded-[3rem]">
-          <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&q=85" alt="Healthcare technology team collaborating on a digital transformation project." className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+          <img src="/consumabkes.jpg" alt="Medical supplies and equipment ready for dispatch to healthcare facilities." className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
           <div className="absolute inset-0 bg-slate-950/55" />
           <div className="relative flex min-h-[560px] items-center justify-center px-5 py-20 text-center text-white">
             <div className="max-w-3xl">
               <PackageCheck className="mx-auto h-8 w-8" strokeWidth={1.3} aria-hidden="true" />
               <h2 className="mt-7 font-serif text-4xl leading-[1.02] tracking-[-0.045em] sm:text-6xl">
-                Let’s build better-connected care.
+                Let’s equip better care together.
               </h2>
               <p className="mx-auto mt-5 max-w-xl text-[15px] leading-7 text-white/70">
-                Tell us where your organization wants to go. We’ll help define the right technology
-                strategy, implementation roadmap and support model.
+                Tell us what your facility needs and we’ll come back with suitable options,
+                straightforward pricing and current availability.
               </p>
-              <div className="mt-7"><ArrowLink to="/contact" light>Book a consultation</ArrowLink></div>
+              <div className="mt-7"><ArrowLink to="/contact" light>Request a quote</ArrowLink></div>
             </div>
           </div>
         </div>

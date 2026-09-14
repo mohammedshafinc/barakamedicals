@@ -8,40 +8,48 @@ import {
   Phone,
   Send,
 } from 'lucide-react';
+import useDocumentMeta from '../hooks/useDocumentMeta';
 
 const contactMethods = [
   {
     label: 'Email us',
     value: 'info@barakamedicals.com',
-    detail: 'For consultation and project enquiries',
+    detail: 'For product enquiries and quotations',
     href: 'mailto:info@barakamedicals.com',
     icon: Mail,
   },
   {
-    label: 'Call us',
-    value: '+974 XXXX XXXX',
-    detail: 'Speak directly with our technology team',
-    href: 'tel:+974XXXXXXXX',
+    label: 'WhatsApp or call',
+    value: '+974 3393 14435',
+    detail: 'Speak directly with our sales team',
+    href: 'https://wa.me/974339314435',
     icon: Phone,
   },
   {
     label: 'Visit us',
     value: 'Doha, Qatar',
-    detail: 'Supporting healthcare organizations across Qatar',
+    detail: 'Supplying healthcare facilities across Qatar',
     icon: MapPin,
   },
 ];
 
 const inquiryChecklist = [
-  'Your business or care-delivery goal',
-  'Your current systems and key users',
-  'Your preferred timeline and priorities',
+  'The product or equipment you need',
+  'Quantities and any specifications',
+  'Your required delivery timeline',
 ];
 
 const fieldClassName =
   'mt-2 w-full rounded-xl border border-gray-300 bg-gray-50/70 px-4 py-3.5 text-gray-900 outline-none transition placeholder:text-gray-400 hover:border-gray-400 focus:border-brand-500 focus:bg-white focus:ring-4 focus:ring-brand-100';
 
 const Contact = () => {
+  useDocumentMeta({
+    title: 'Contact & Request a Quote | Baraka Medical Solutions Qatar',
+    description:
+      'Request a quote for medical equipment in Qatar. Contact the Baraka Medical Solutions team in Doha by phone, WhatsApp or email for pricing and availability.',
+    path: '/contact',
+  });
+
   const [formData, setFormData] = useState({
     name: '',
     organization: '',
@@ -86,25 +94,25 @@ const Contact = () => {
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-20 lg:px-8 lg:py-24">
           <div>
             <h1 className="max-w-3xl text-4xl font-bold leading-[1.1] tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
-              Let’s shape your next digital health initiative
+              Request a quote for medical equipment in Qatar
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-gray-600">
-              Share your goals, current technology landscape and challenges. Our team will help you
-              define a practical path from discovery to secure implementation and support.
+              Tell us which products your facility needs. Our Doha team will respond with suitable
+              options, clear pricing and current availability.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-x-7 gap-y-3 text-sm font-medium text-gray-600">
               <span className="inline-flex items-center gap-2">
                 <CheckCircle2 className="h-4 w-4 text-brand-600" aria-hidden="true" />
-                Strategic discovery
+                Fast quotations
               </span>
               <span className="inline-flex items-center gap-2">
                 <CheckCircle2 className="h-4 w-4 text-brand-600" aria-hidden="true" />
-                Solution roadmap
+                Certified products
               </span>
               <span className="inline-flex items-center gap-2">
                 <CheckCircle2 className="h-4 w-4 text-brand-600" aria-hidden="true" />
-                Doha-based support
+                Delivery across Qatar
               </span>
             </div>
           </div>
@@ -191,7 +199,7 @@ const Contact = () => {
                   <div>
                     <p className="font-bold">Based in Doha</p>
                     <p className="mt-1 text-sm leading-6 text-brand-100">
-                      Supporting hospitals, clinics, health networks and care teams across Qatar.
+                      Supplying hospitals, clinics, laboratories and pharmacies across Qatar.
                     </p>
                   </div>
                 </div>
@@ -202,7 +210,7 @@ const Contact = () => {
               <div className="flex flex-col gap-3 border-b border-gray-200 pb-7 sm:flex-row sm:items-end sm:justify-between">
                 <div>
                   <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
-                    Tell us how we can help
+                    Tell us what you need
                   </h2>
                 </div>
                 <p className="text-sm text-gray-500">Fields marked * are required</p>
@@ -305,13 +313,14 @@ const Contact = () => {
                     className={fieldClassName}
                   >
                     <option value="" disabled>
-                      Select a project type
+                      Select an enquiry type
                     </option>
-                    <option value="strategy">Digital strategy and discovery</option>
-                    <option value="crm-erp-emr">CRM, ERP or EMR implementation</option>
-                    <option value="integration">Data and system integration</option>
-                    <option value="cloud-security">Cloud and cybersecurity</option>
-                    <option value="support">Managed support and optimization</option>
+                    <option value="diagnostics">Diagnostics and imaging equipment</option>
+                    <option value="monitoring">Patient monitoring systems</option>
+                    <option value="rehabilitation">Rehabilitation equipment</option>
+                    <option value="ent-audiology">ENT and audiology devices</option>
+                    <option value="consumables">Medical consumables</option>
+                    <option value="service">Installation, servicing or spare parts</option>
                     <option value="other">Something else</option>
                   </select>
                 </div>
@@ -328,7 +337,7 @@ const Contact = () => {
                     required
                     rows="6"
                     className={`${fieldClassName} resize-y`}
-                    placeholder="Tell us about your goals, current systems, users, challenges and preferred timeline..."
+                    placeholder="List the products, models, quantities and specifications you need, along with your required delivery date..."
                   />
                 </div>
 
@@ -340,7 +349,7 @@ const Contact = () => {
                     type="submit"
                     className="group inline-flex items-center justify-center gap-3 rounded-full bg-brand-600 px-7 py-3.5 font-semibold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-brand-700 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
                   >
-                    Send enquiry
+                    Request a quote
                     <Send
                       className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
                       aria-hidden="true"
