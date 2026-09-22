@@ -1,6 +1,7 @@
 import { ArrowRight, Mail, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
+import { ADDRESS_LINES, COMPANY_LEGAL_NAME } from '../data/address';
 
 const Footer = () => {
   return (
@@ -43,10 +44,21 @@ const Footer = () => {
                 <Mail className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
                 info@barakamedicals.com
               </a>
-              <p className="flex items-center gap-2.5 text-slate-500">
-                <MapPin className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
-                Doha, Qatar
-              </p>
+              <address className="flex gap-2.5 not-italic text-slate-500">
+                <MapPin
+                  className="mt-0.5 h-4 w-4 shrink-0"
+                  strokeWidth={1.5}
+                  aria-hidden="true"
+                />
+                <span className="leading-6">
+                  <span className="block text-slate-600">{COMPANY_LEGAL_NAME}</span>
+                  {ADDRESS_LINES.map((line) => (
+                    <span key={line} className="block">
+                      {line}
+                    </span>
+                  ))}
+                </span>
+              </address>
               <Link to="/contact" className="group inline-flex items-center gap-2 font-medium">
                 Request a quote
                 <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" aria-hidden="true" />

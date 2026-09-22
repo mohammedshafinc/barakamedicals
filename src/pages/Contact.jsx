@@ -9,6 +9,7 @@ import {
   Send,
 } from 'lucide-react';
 import useDocumentMeta from '../hooks/useDocumentMeta';
+import { ADDRESS_LINES, COMPANY_LEGAL_NAME } from '../data/address';
 
 const contactMethods = [
   {
@@ -27,8 +28,8 @@ const contactMethods = [
   },
   {
     label: 'Visit us',
-    value: 'Doha, Qatar',
-    detail: 'Supplying healthcare facilities across Qatar',
+    value: COMPANY_LEGAL_NAME,
+    lines: ADDRESS_LINES,
     icon: MapPin,
   },
 ];
@@ -156,7 +157,7 @@ const Contact = () => {
               </p>
 
               <div className="mt-9 overflow-hidden rounded-2xl border border-gray-200 bg-white">
-                {contactMethods.map(({ label, value, detail, href, icon: Icon }) => {
+                {contactMethods.map(({ label, value, detail, lines, href, icon: Icon }) => {
                   const content = (
                     <>
                       <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-50 text-brand-700 transition-colors group-hover:bg-brand-100">
@@ -164,7 +165,20 @@ const Contact = () => {
                       </span>
                       <span className="min-w-0 flex-1">
                         <span className="block font-bold text-gray-900">{value}</span>
-                        <span className="mt-1 block text-sm leading-5 text-gray-500">{detail}</span>
+                        {detail && (
+                          <span className="mt-1 block text-sm leading-5 text-gray-500">
+                            {detail}
+                          </span>
+                        )}
+                        {lines && (
+                          <span className="mt-1 block text-sm leading-6 text-gray-500">
+                            {lines.map((line) => (
+                              <span key={line} className="block">
+                                {line}
+                              </span>
+                            ))}
+                          </span>
+                        )}
                       </span>
                       {href && (
                         <ArrowUpRight
@@ -175,18 +189,24 @@ const Contact = () => {
                     </>
                   );
 
-                  return href ? (
-                    <a
-                      key={label}
-                      href={href}
-                      className="group flex gap-4 border-b border-gray-200 p-5 transition-colors last:border-0 hover:bg-gray-50 sm:p-6"
-                    >
+                  if (href) {
+                    return (
+                      <a
+                        key={label}
+                        href={href}
+                        className="group flex gap-4 border-b border-gray-200 p-5 transition-colors last:border-0 hover:bg-gray-50 sm:p-6"
+                      >
+                        {content}
+                      </a>
+                    );
+                  }
+
+                  // The postal address is marked up as <address> so assistive
+                  // tech and crawlers read it as contact information.
+                  return (
+                    <address key={label} className="group flex gap-4 p-5 not-italic sm:p-6">
                       {content}
-                    </a>
-                  ) : (
-                    <div key={label} className="group flex gap-4 p-5 sm:p-6">
-                      {content}
-                    </div>
+                    </address>
                   );
                 })}
               </div>
