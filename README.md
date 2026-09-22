@@ -91,3 +91,33 @@ Edit the Tailwind config in:
 ## License
 
 © 2026 Baraka Medicals. All rights reserved.
+
+## Contact form email
+
+The quote form posts to `api/quote.js`, a Vercel Function that emails the
+enquiry to the sales inbox through Resend. The API key stays on the server, so
+it is never exposed in the browser bundle.
+
+Set these environment variables in the Vercel project (Settings →
+Environment Variables), for Production, Preview and Development:
+
+| Variable | Required | Notes |
+| --- | --- | --- |
+| `RESEND_API_KEY` | yes | From resend.com → API Keys. Sending permission is enough. |
+| `QUOTE_TO_EMAIL` | no | Where enquiries arrive. Defaults to `info@barakamedicals.com`. |
+| `QUOTE_FROM_EMAIL` | no | Must be on a domain verified in Resend. Defaults to `quotes@send.barakamedicals.com`. |
+
+The sending domain is `send.barakamedicals.com` rather than the root domain, so
+Resend's SPF and DKIM records cannot conflict with the records that deliver mail
+to `info@barakamedicals.com`. Only one SPF TXT record is allowed per DNS name.
+
+### Testing locally
+
+`npm run dev` serves the Vite app only and will return 404 for `/api/quote`.
+To exercise the function locally, use the Vercel CLI instead:
+
+```bash
+npm install -g vercel
+vercel env pull .env.local   # fetches RESEND_API_KEY
+vercel dev
+```

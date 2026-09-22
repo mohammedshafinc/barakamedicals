@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import {
+  AlertCircle,
   ArrowUpRight,
   CheckCircle2,
   Clock3,
+  Loader2,
   Mail,
   MapPin,
   Phone,
@@ -10,6 +12,7 @@ import {
 } from 'lucide-react';
 import useDocumentMeta from '../hooks/useDocumentMeta';
 import { ADDRESS_LINES, COMPANY_LEGAL_NAME } from '../data/address';
+import { ENQUIRY_TYPES } from '../data/enquiryTypes';
 
 const contactMethods = [
   {
@@ -43,6 +46,20 @@ const inquiryChecklist = [
 const fieldClassName =
   'mt-2 w-full rounded-xl border border-gray-300 bg-gray-50/70 px-4 py-3.5 text-gray-900 outline-none transition placeholder:text-gray-400 hover:border-gray-400 focus:border-brand-500 focus:bg-white focus:ring-4 focus:ring-brand-100';
 
+const EMPTY_FORM = {
+  name: '',
+  organization: '',
+  email: '',
+  phone: '',
+  subject: '',
+  message: '',
+  // Honeypot. Hidden from people, irresistible to bots; see api/quote.js.
+  website: '',
+};
+
+const FALLBACK_ERROR =
+  'Something went wrong sending your enquiry. Please email info@barakamedicals.com.';
+
 const Contact = () => {
   useDocumentMeta({
     title: 'Contact & Request a Quote | Baraka Medical Solutions Qatar',
@@ -51,32 +68,51 @@ const Contact = () => {
     path: '/contact',
   });
 
-  const [formData, setFormData] = useState({
-    name: '',
-    organization: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: '',
-  });
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [formData, setFormData] = useState(EMPTY_FORM);
+  // 'idle' | 'sending' | 'sent' | 'error'
+  const [status, setStatus] = useState('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const isSending = status === 'sending';
 
   const handleChange = ({ target: { name, value } }) => {
     setFormData((current) => ({ ...current, [name]: value }));
-    setIsSubmitted(false);
+    // Clear the previous outcome once they start editing again.
+    if (status !== 'sending') {
+      setStatus('idle');
+      setErrorMessage('');
+    }
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    setIsSubmitted(true);
-    setFormData({
-      name: '',
-      organization: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: '',
-    });
+    if (isSending) return;
+
+    setStatus('sending');
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      // A failed send must not look like a success, or the enquiry is lost
+      // without anyone knowing.
+      if (!response.ok) {
+        const payload = await response.json().catch(() => ({}));
+        setErrorMessage(payload.error || FALLBACK_ERROR);
+        setStatus('error');
+        return;
+      }
+
+      setFormData(EMPTY_FORM);
+      setStatus('sent');
+    } catch {
+      setErrorMessage(FALLBACK_ERROR);
+      setStatus('error');
+    }
   };
 
   return (
@@ -236,16 +272,26 @@ const Contact = () => {
                 <p className="text-sm text-gray-500">Fields marked * are required</p>
               </div>
 
-              {isSubmitted && (
+              {status === 'sent' && (
                 <div
                   className="mt-7 flex gap-3 rounded-xl border border-brand-200 bg-brand-50 p-4 text-sm leading-6 text-brand-800"
                   role="status"
                 >
                   <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0" aria-hidden="true" />
                   <p>
-                    <strong className="font-bold">Thank you for reaching out.</strong> Our team will
-                    review your enquiry and get back to you.
+                    <strong className="font-bold">Thank you for reaching out.</strong> Your enquiry
+                    is on its way to our team and we will get back to you.
                   </p>
+                </div>
+              )}
+
+              {status === 'error' && (
+                <div
+                  className="mt-7 flex gap-3 rounded-xl border border-accent-200 bg-accent-50 p-4 text-sm leading-6 text-accent-800"
+                  role="alert"
+                >
+                  <AlertCircle className="mt-0.5 h-5 w-5 shrink-0" aria-hidden="true" />
+                  <p>{errorMessage || FALLBACK_ERROR}</p>
                 </div>
               )}
 
@@ -335,13 +381,11 @@ const Contact = () => {
                     <option value="" disabled>
                       Select an enquiry type
                     </option>
-                    <option value="diagnostics">Diagnostics and imaging equipment</option>
-                    <option value="monitoring">Patient monitoring systems</option>
-                    <option value="rehabilitation">Rehabilitation equipment</option>
-                    <option value="ent-audiology">ENT and audiology devices</option>
-                    <option value="consumables">Medical consumables</option>
-                    <option value="service">Installation, servicing or spare parts</option>
-                    <option value="other">Something else</option>
+                    {ENQUIRY_TYPES.map(({ value, label }) => (
+                      <option key={value} value={value}>
+                        {label}
+                      </option>
+                    ))}
                   </select>
                 </div>
 
@@ -361,19 +405,39 @@ const Contact = () => {
                   />
                 </div>
 
+                {/* Honeypot. Hidden from people and from screen readers, but a
+                    bot filling every field will complete it and be rejected. */}
+                <div className="hidden" aria-hidden="true">
+                  <label htmlFor="website">Website</label>
+                  <input
+                    type="text"
+                    id="website"
+                    name="website"
+                    value={formData.website}
+                    onChange={handleChange}
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </div>
+
                 <div className="flex flex-col gap-4 border-t border-gray-200 pt-6 sm:flex-row sm:items-center sm:justify-between">
                   <p className="max-w-sm text-xs leading-5 text-gray-500">
                     We use your details only to respond to this enquiry.
                   </p>
                   <button
                     type="submit"
-                    className="group inline-flex items-center justify-center gap-3 rounded-full bg-brand-600 px-7 py-3.5 font-semibold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-brand-700 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
+                    disabled={isSending}
+                    className="group inline-flex items-center justify-center gap-3 rounded-full bg-brand-600 px-7 py-3.5 font-semibold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-brand-700 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600 disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0"
                   >
-                    Request a quote
-                    <Send
-                      className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
-                      aria-hidden="true"
-                    />
+                    {isSending ? 'Sending...' : 'Request a quote'}
+                    {isSending ? (
+                      <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
+                    ) : (
+                      <Send
+                        className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                        aria-hidden="true"
+                      />
+                    )}
                   </button>
                 </div>
               </form>
