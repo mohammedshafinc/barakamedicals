@@ -20,9 +20,9 @@ const contactMethods = [
   },
   {
     label: 'WhatsApp or call',
-    value: '+974 3393 14435',
+    value: '+974 3393 1435',
     detail: 'Speak directly with our sales team',
-    href: 'https://wa.me/974339314435',
+    href: 'https://wa.me/97433931435',
     icon: Phone,
   },
   {
@@ -117,7 +117,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-white/80 bg-white/80 p-6 shadow-[0_22px_70px_-38px_rgba(28,67,91,0.32)] backdrop-blur sm:rounded-3xl sm:p-8">
+          <div className="rounded-2xl border border-white/80 bg-white/80 p-6 shadow-[0_22px_70px_-38px_rgba(31,58,51,0.32)] backdrop-blur sm:rounded-3xl sm:p-8">
             <div className="flex items-center gap-3">
               <span className="grid h-11 w-11 place-items-center rounded-xl bg-brand-50 text-brand-700">
                 <Clock3 className="h-5 w-5" aria-hidden="true" />
@@ -206,7 +206,7 @@ const Contact = () => {
               </div>
             </aside>
 
-            <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-[0_24px_70px_-42px_rgba(18,43,60,0.3)] sm:rounded-3xl sm:p-9 lg:p-11">
+            <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-[0_24px_70px_-42px_rgba(15,29,25,0.3)] sm:rounded-3xl sm:p-9 lg:p-11">
               <div className="flex flex-col gap-3 border-b border-gray-200 pb-7 sm:flex-row sm:items-end sm:justify-between">
                 <div>
                   <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">

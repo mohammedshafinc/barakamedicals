@@ -63,7 +63,7 @@ const Footer = () => {
 
       <div className="mx-auto mt-8 w-full max-w-none sm:mt-10">
         <p
-          className="-mb-[0.11em] select-none text-center font-serif text-[clamp(6.5rem,25vw,23rem)] leading-[0.68] tracking-[-0.09em] text-[#315B50]"
+          className="-mb-[0.11em] select-none text-center font-serif text-[clamp(6.5rem,25vw,23rem)] leading-[0.68] tracking-[-0.09em] text-brand-600"
           aria-hidden="true"
         >
           Baraka

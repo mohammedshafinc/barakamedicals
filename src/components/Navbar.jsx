@@ -82,7 +82,7 @@ const Navbar = () => {
 
             <Link
               to="/contact"
-              className="group hidden items-center gap-2 rounded-full border border-[#315B50] bg-[#315B50] px-4 py-2.5 text-[12px] font-medium text-white transition-colors hover:bg-[#26483f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#315B50] lg:inline-flex"
+              className="group hidden items-center gap-2 rounded-full border border-brand-600 bg-brand-600 px-4 py-2.5 text-[12px] font-medium text-white transition-colors hover:border-brand-700 hover:bg-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600 lg:inline-flex"
             >
               Request a quote
               <ArrowRight
@@ -139,7 +139,7 @@ const Navbar = () => {
               <Link
                 to="/contact"
                 onClick={closeMenu}
-                className="group mt-3 flex items-center justify-between rounded-xl bg-[#315B50] px-4 py-3 text-[13px] font-medium text-white transition-colors hover:bg-[#26483f]"
+                className="group mt-3 flex items-center justify-between rounded-xl bg-brand-600 px-4 py-3 text-[13px] font-medium text-white transition-colors hover:bg-brand-700"
               >
                 Request a quote
                 <ArrowRight

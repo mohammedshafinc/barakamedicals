@@ -5,23 +5,26 @@
   --font-serif: "Caudex", Georgia, "Times New Roman", serif;
 
   /* ------------------------------------------------------------------
-     Brand — the logo blue (#2776a2 sits at 600). Clinical and steady.
-     Use 600 for primary actions, 800/900 for large dark surfaces.
+     Brand — the site green. 600 (#315b50) and 700 (#26483f) are the exact
+     tones the navbar CTA and footer wordmark have always used; the rest of
+     the ramp is built on the same hue so every surface agrees.
+     Use 600 for primary actions, 700 for their hover, 800/900 for large
+     dark surfaces. White on 600 measures 7.66:1, so it clears WCAG AA.
      ------------------------------------------------------------------ */
-  --color-brand-50: #f2f7fa;
-  --color-brand-100: #e3eef4;
-  --color-brand-200: #c2dbe8;
-  --color-brand-300: #93c0d6;
-  --color-brand-400: #5da0bf;
-  --color-brand-500: #3785ab;
-  --color-brand-600: #2776a2;
-  --color-brand-700: #205f83;
-  --color-brand-800: #1d506d;
-  --color-brand-900: #1c435b;
-  --color-brand-950: #122b3c;
+  --color-brand-50: #f4f8f7;
+  --color-brand-100: #e5f0ed;
+  --color-brand-200: #cbe1db;
+  --color-brand-300: #a6c9c0;
+  --color-brand-400: #75ae9f;
+  --color-brand-500: #4a8777;
+  --color-brand-600: #315b50;
+  --color-brand-700: #26483f;
+  --color-brand-800: #1f3a33;
+  --color-brand-900: #1a302a;
+  --color-brand-950: #0f1d19;
 
   /* ------------------------------------------------------------------
-     Accent — the logo orange (#f38b2b sits at 400). Used sparingly,
+     Accent — warm orange (#f38b2b sits at 400). Used sparingly,
      for emphasis only. 400 fills carry ink text; 700 is the
      accessible tone for orange text on white.
      ------------------------------------------------------------------ */
