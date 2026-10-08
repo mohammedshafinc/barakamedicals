@@ -1,3 +1,5 @@
+import { buildWhatsAppUrl } from '../data/contact';
+
 /**
  * Floating WhatsApp contact button.
  *
@@ -5,15 +7,10 @@
  * lucide-react ships no brand marks, so the glyph is inlined here.
  */
 
-// Digits only in international format, which is what the wa.me deep link expects.
-const WHATSAPP_NUMBER = '97433931435';
-
 const PREFILLED_MESSAGE =
   'Hello Baraka Medical Solutions, I would like to request a quote for medical equipment.';
 
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-  PREFILLED_MESSAGE,
-)}`;
+const WHATSAPP_URL = buildWhatsAppUrl(PREFILLED_MESSAGE);
 
 const WhatsAppButton = () => (
   <a

@@ -5,7 +5,7 @@ import Logo from './Logo';
 
 const navigation = [
   { label: 'Home', to: '/' },
-  { label: 'Products', to: '/#products' },
+  { label: 'ENT & Audiology', to: '/ent-audiology' },
   { label: 'Why Baraka', to: '/#why-baraka' },
   { label: 'How it works', to: '/#process' },
   { label: 'FAQ', to: '/#faq' },

@@ -1,7 +1,8 @@
-import { ArrowRight, Mail, MapPin } from 'lucide-react';
+import { ArrowRight, Mail, MapPin, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
 import { ADDRESS_LINES, COMPANY_LEGAL_NAME } from '../data/address';
+import { buildWhatsAppUrl, WHATSAPP_DISPLAY } from '../data/contact';
 
 const Footer = () => {
   return (
@@ -43,6 +44,16 @@ const Footer = () => {
               >
                 <Mail className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
                 info@barakamedicals.com
+              </a>
+              <a
+                href={buildWhatsAppUrl('Hello Baraka Medical Solutions, I would like to make an enquiry.')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2.5 transition-colors hover:text-slate-500"
+                aria-label={`Contact Baraka Medical Solutions on WhatsApp at ${WHATSAPP_DISPLAY}`}
+              >
+                <MessageCircle className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
+                {WHATSAPP_DISPLAY}
               </a>
               <address className="flex gap-2.5 not-italic text-slate-500">
                 <MapPin

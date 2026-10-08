@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import useDocumentMeta from '../hooks/useDocumentMeta';
 import { ADDRESS_LINES, COMPANY_LEGAL_NAME } from '../data/address';
+import { buildWhatsAppUrl, WHATSAPP_DISPLAY } from '../data/contact';
 import { ENQUIRY_TYPES } from '../data/enquiryTypes';
 
 const contactMethods = [
@@ -24,9 +25,9 @@ const contactMethods = [
   },
   {
     label: 'WhatsApp or call',
-    value: '+974 3393 1435',
+    value: WHATSAPP_DISPLAY,
     detail: 'Speak directly with our sales team',
-    href: 'https://wa.me/97433931435',
+    href: buildWhatsAppUrl(),
     icon: Phone,
   },
   {
