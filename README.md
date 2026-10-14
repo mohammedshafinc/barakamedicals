@@ -27,7 +27,7 @@ A modern, minimal website for Baraka Medicals - a medical devices company based 
 cd barakamedicals
 npm install
 ```
-
+.
 ### Development
 
 ```bash
