@@ -61,10 +61,7 @@ const PRODUCT = {
     ['ASIN', 'B0GMW6YZ57'],
     ['Country of origin', 'India'],
     ['First available', '11 February 2026'],
-    [
-      'Packer',
-      'Grand VF, Five Star Arcade, Anjukandy, near Govt. Hospital, Kannur 670017, Kerala, India',
-    ],
+    
   ],
 };
 
