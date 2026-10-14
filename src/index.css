@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "DM Sans", Arial, Helvetica, sans-serif;
-  --font-serif: "Caudex", Georgia, "Times New Roman", serif;
+  --font-sans: "Open Sans", "Segoe UI", Arial, Helvetica, sans-serif;
+  --font-serif: "Merriweather", Georgia, "Times New Roman", serif;
 
   /* ------------------------------------------------------------------
      Brand — the site green. 600 (#315b50) and 700 (#26483f) are the exact
@@ -78,10 +78,13 @@
   }
 }
 
-/* Primary typography uses Caudex Bold; supporting and interface text remains sans-serif. */
+/* Primary typography uses Merriweather Bold; supporting and interface text remains sans-serif. */
 h1,
 h2,
 h3,
+h4,
+h5,
+h6,
 .font-serif {
   font-family: var(--font-serif);
   font-weight: 700;

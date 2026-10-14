@@ -3,7 +3,7 @@
  *
  * Rendered as inline SVG rather than through <img> so the mark inherits
  * `currentColor` from its container and the "MEDICAL SOLUTIONS" line can be set
- * in the site's Caudex webfont as live text. A webfont does not load inside an
+ * in the site's Merriweather webfont as live text. A webfont does not load inside an
  * externally referenced SVG, which is why the original asset had that line
  * baked in as vector outlines.
  *
@@ -45,7 +45,7 @@ const Logo = ({ className = 'h-14 w-auto', label = 'Baraka Medical Solutions' })
       y={SUBTITLE_BASELINE}
       textLength={SUBTITLE_WIDTH}
       lengthAdjust="spacing"
-      fontFamily="Caudex, Georgia, 'Times New Roman', serif"
+      fontFamily="Merriweather, Georgia, 'Times New Roman', serif"
       fontSize="44"
       fontWeight="700"
     >
