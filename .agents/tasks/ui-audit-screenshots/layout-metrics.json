@@ -1,0 +1,50 @@
+{
+  "desktop": {
+    "viewport": {
+      "width": 1280,
+      "height": 900
+    },
+    "heroImages": 0,
+    "hasEyebrowText": false,
+    "hasCalloutText": false,
+    "headingTextAlign": "center",
+    "headingCenterDeltaPx": 0,
+    "paragraphCenterDeltaPx": 0,
+    "listDisplay": "grid",
+    "pointFontSize": "15px",
+    "firstPointBorderRight": "1px",
+    "firstPointBorderBottom": "0px",
+    "dividerColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.3)",
+    "ctaCount": 2,
+    "ctasFocusable": true,
+    "ctasInsideViewport": true,
+    "horizontalOverflow": false,
+    "scrollWidth": 1265,
+    "clientWidth": 1265,
+    "heroHeight": 900
+  },
+  "mobile": {
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "heroImages": 0,
+    "hasEyebrowText": false,
+    "hasCalloutText": false,
+    "headingTextAlign": "center",
+    "headingCenterDeltaPx": 0,
+    "paragraphCenterDeltaPx": 0,
+    "listDisplay": "grid",
+    "pointFontSize": "14px",
+    "firstPointBorderRight": "0px",
+    "firstPointBorderBottom": "1px",
+    "dividerColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.3)",
+    "ctaCount": 2,
+    "ctasFocusable": true,
+    "ctasInsideViewport": true,
+    "horizontalOverflow": false,
+    "scrollWidth": 375,
+    "clientWidth": 375,
+    "heroHeight": 866.125
+  }
+}
