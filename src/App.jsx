@@ -5,6 +5,7 @@ import WhatsAppButton from './components/WhatsAppButton';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import EntAudiology from './pages/EntAudiology';
+import EntAudiologyProducts from './pages/EntAudiologyProducts';
 import Home from './pages/Home';
 
 function AppShell() {
@@ -19,7 +20,8 @@ function AppShell() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/ent-audiology" element={<EntAudiology />} />
+          <Route path="/ent-audiology" element={<EntAudiologyProducts />} />
+          <Route path="/ent-audiology/safe-ears" element={<EntAudiology />} />
         </Routes>
       </main>
       {!isLandingPage && <Footer />}

@@ -76,7 +76,7 @@ const EntAudiology = () => {
     title: 'Safe Ears Ear Protection Aid in Qatar | Baraka Medical Solutions',
     description:
       'Shop reusable Safe Ears water-protection ear covers in Qatar. Choose XS, S, M or L and place your order with Baraka Medical Solutions on WhatsApp.',
-    path: '/ent-audiology',
+    path: '/ent-audiology/safe-ears',
   });
 
   const [activeImage, setActiveImage] = useState(0);
@@ -132,7 +132,7 @@ const EntAudiology = () => {
       `Total: QAR ${PRODUCT.price * parsedQuantity}`,
       '',
       'Please confirm availability and delivery details.',
-      'Product page: https://www.barakamedicals.com/ent-audiology',
+      'Product page: https://www.barakamedicals.com/ent-audiology/safe-ears',
     ].join('\n');
 
     const orderWindow = window.open(buildWhatsAppUrl(message), '_blank', 'noopener,noreferrer');
@@ -148,7 +148,11 @@ const EntAudiology = () => {
               Home
             </Link>
             <ChevronRight className="h-3.5 w-3.5" aria-hidden="true" />
-            <span aria-current="page">ENT &amp; Audiology</span>
+            <Link to="/ent-audiology" className="transition-colors hover:text-slate-950">
+              ENT &amp; Audiology
+            </Link>
+            <ChevronRight className="h-3.5 w-3.5" aria-hidden="true" />
+            <span aria-current="page">Safe Ears</span>
           </nav>
           <div className="mt-6 max-w-3xl">
             <p className="text-[11px] font-medium uppercase tracking-[0.32em] text-[#9a5f25]">
