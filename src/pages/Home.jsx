@@ -460,6 +460,41 @@ const Home = () => {
         </div>
       </section>
 
+      <section
+        id="featured-product"
+        className="scroll-mt-28 px-5 pb-28 sm:px-8 sm:pb-40"
+        aria-labelledby="featured-product-heading"
+      >
+        <div className="mx-auto grid max-w-[1180px] items-center gap-8 rounded-[2rem] bg-[#e5ebe2] p-6 sm:grid-cols-[220px_1fr] sm:gap-10 sm:p-8 lg:rounded-[2.5rem]">
+          <div className="aspect-square overflow-hidden rounded-[1.25rem] bg-white">
+            <img
+              src="/products/product-1/Symmetrical Beige Safe Ears Earpieces.png"
+              alt="Pair of beige Safe Ears reusable ear protection covers."
+              className="h-full w-full object-contain"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div className="max-w-xl">
+            <p className="text-[12px] font-medium uppercase tracking-[0.48em] text-[#b67a32]">
+              Featured Product
+            </p>
+            <h2
+              id="featured-product-heading"
+              className="mt-4 font-serif text-3xl leading-[1.08] tracking-[-0.035em] sm:text-4xl"
+            >
+              Safe Ears Ear Protection Aid
+            </h2>
+            <p className="mt-3 text-[15px] leading-7 text-slate-600">
+              Reusable ear covers that keep water out while showering and washing hair.
+            </p>
+            <div className="mt-6">
+              <ArrowLink to="/ent-audiology">View product &amp; order</ArrowLink>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="products" className="scroll-mt-28 px-5 pb-28 sm:px-8 sm:pb-40">
         <div className="mx-auto max-w-[1180px] space-y-28 sm:space-y-40">
           {products.map((product, index) => (
