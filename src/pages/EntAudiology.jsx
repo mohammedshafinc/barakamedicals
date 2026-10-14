@@ -21,7 +21,7 @@ const PRODUCT = {
   use: 'Water Protection',
   style: 'Over-Ear',
   material: 'Soft silicone',
-  price: 75,
+  price: 79,
   packageQuantity: '2 Count',
   images: [
     {

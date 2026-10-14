@@ -7,7 +7,7 @@ const product = {
   subtitle: 'Reusable ear covers for showering and hair washing',
   image: '/products/product-1/Symmetrical Beige Safe Ears Earpieces.png',
   alt: 'Pair of beige Safe Ears reusable ear protection covers.',
-  price: 75,
+  price: 79,
   packageQuantity: '2 ear covers',
   sizes: 'XS, S, M and L',
   to: '/ent-audiology/safe-ears',
